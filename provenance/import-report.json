@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "source_repository": "TaylorResearchLab/beyond-the-chat-window",
+  "source_commit": "32be4c53532074e7a1be46f7706fc7e0c5701657",
+  "import_plan_sha256": "3ac09e80d3d12d0ce854dbfdd0f8dc745cd8fd9982539c25315a9c1f1aa5f323",
+  "workflow_run_id": "33993666253",
+  "bootstrap_commit": "c9d1e3f4d195f5c5d1d5b2891f2aab096151f2f6",
+  "python": "3.12.3",
+  "checks": {
+    "source_git_blobs": "passed",
+    "archive_source_agreement": {
+      "status": "passed",
+      "source_file_count": 5,
+      "manifest_hashed_members": 4,
+      "archive_root": "user-mediated-collaboration/",
+      "version": "0.1.0",
+      "protocol_snapshot": "47ad152"
+    }
+  },
+  "files": [
+    {
+      "source_path": "skills/user-mediated-collaboration/MANIFEST.json",
+      "destination_path": "skills/user-mediated-collaboration/MANIFEST.json",
+      "git_blob_sha": "24b063c8b0faddbf5c2a079fef1d707f241acc81",
+      "bytes": 1046,
+      "sha256": "4837b85c351ccbc354ca8daa2ec156b90c2fbc33ea62320636fc220219f79722"
+    },
+    {
+      "source_path": "skills/user-mediated-collaboration/SKILL.md",
+      "destination_path": "skills/user-mediated-collaboration/SKILL.md",
+      "git_blob_sha": "1b2b2a9b65efc32659dbfa48277646bc4879abe0",
+      "bytes": 11164,
+      "sha256": "dcb65cdfbafb833b206a1c5ad1568fd7b30ee6b4bce93984530a36e882148e72"
+    },
+    {
+      "source_path": "skills/user-mediated-collaboration/references/notion-setup.md",
+      "destination_path": "skills/user-mediated-collaboration/references/notion-setup.md",
+      "git_blob_sha": "ec5d2f77331d1a26f014c879c5d2ad000a66594a",
+      "bytes": 4657,
+      "sha256": "6c4f372bda71c9d2414460705403b6f9b158e6852b3671026ba4365d1a38ad14"
+    },
+    {
+      "source_path": "skills/user-mediated-collaboration/references/protocol.md",
+      "destination_path": "skills/user-mediated-collaboration/references/protocol.md",
+      "git_blob_sha": "db6c397956a0b9c1b1b4d03aa3d325710256b5b6",
+      "bytes": 25430,
+      "sha256": "24c704e80cd6906eca34cabb6e1fc62d94ce52249f0508e1866543e3d07f6593"
+    },
+    {
+      "source_path": "skills/user-mediated-collaboration/references/templates.md",
+      "destination_path": "skills/user-mediated-collaboration/references/templates.md",
+      "git_blob_sha": "3b85394176da2cdd085914fd89678abfc2622625",
+      "bytes": 8884,
+      "sha256": "85962e02696e26377ff96e36a5fb2497eb039fff2dba4e2e14577bfeb2b984df"
+    },
+    {
+      "source_path": "skills/user-mediated-collaboration-v0.1.0.skill",
+      "destination_path": "skills/user-mediated-collaboration-v0.1.0.skill",
+      "git_blob_sha": "ca98c1d5db14fdacfcea1ef4e50466d5b636e027",
+      "bytes": 21096,
+      "sha256": "b15724466f3d0da5cc220a52e5521b2e7de747efb79e5af37a028ebb5d479deb"
+    },
+    {
+      "source_path": "supplement/01.work-contract.md",
+      "destination_path": "protocol/01.work-contract.md",
+      "git_blob_sha": "013afe2ffac743eabb1c9ab4a23b8351a1768710",
+      "bytes": 35514,
+      "sha256": "07abc1c5d7384bc03263bd9dac69f5c95566c7c2909ef66ab06821b9ef751ae1"
+    },
+    {
+      "source_path": "supplement/00.implementation-guide.md",
+      "destination_path": "docs/implementation-guide.md",
+      "git_blob_sha": "36d9b9fd5aae83524cc91aa954b6e0a5de7c84cf",
+      "bytes": 23708,
+      "sha256": "9f37f43f30f8461e19ac2382114b7665ab05c2017ce323ab5939872a5fa54e88"
+    },
+    {
+      "source_path": "supplement/00a.provenance-and-interpretation.md",
+      "destination_path": "docs/provenance-and-interpretation.md",
+      "git_blob_sha": "31771f5aa5a1c14851cf7bc9ad24098f27886720",
+      "bytes": 1795,
+      "sha256": "6c81458c905a94e0dd665fa626bb1e51ddb7bdd4c5479b1b76a5a4612942e75f"
+    },
+    {
+      "source_path": "LICENSE.md",
+      "destination_path": "LICENSE.md",
+      "git_blob_sha": "75fb1f2cb09432253c17e7df11206eace0590887",
+      "bytes": 17105,
+      "sha256": "e92080c5a49a1081ed4fbb5c1a72d399a5baf72e384e3dc28371c7c2fb57cf81"
+    },
+    {
+      "source_path": "LICENSE-CC0.md",
+      "destination_path": "LICENSE-CC0.md",
+      "git_blob_sha": "0490b5a72b9d8a644ed1accac808e7cc8761272f",
+      "bytes": 6953,
+      "sha256": "eb98518f32a371b0acfbc692008076ae46ace7d246408b3b7213ffc7fadbeb18"
+    }
+  ]
+}
