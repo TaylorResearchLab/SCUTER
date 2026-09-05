@@ -1,0 +1,22 @@
+name: Validate SCUTER
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Test package integrity and reproducibility
+        run: python3 -m unittest discover -s tests -v
+      - name: Verify committed distributions against local source
+        run: python3 tools/build.py --check
+      - name: Confirm checks did not modify tracked files
+        run: git diff --exit-code
