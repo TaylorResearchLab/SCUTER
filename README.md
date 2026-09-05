@@ -2,42 +2,46 @@
 
 **Scientific Collaboration for User-directed, Traceable, Evidence-based Research**
 
-A portable Skill for scientist-directed AI collaboration.
+*A portable Skill for scientist-directed AI collaboration.*
 
-SCUTER provides a collaboration protocol, participant instructions, and templates for using AI assistants while the scientist directs the research. Its practices connect assignments, review, decisions, and handoffs to a durable scientific record and versioned artifacts.
+SCUTER helps scientists work with multiple AI assistants while directing the research and maintaining a rigorous scientific record. Its protocol connects questions, assignments, evidence, review, decisions, and handoffs to the files and methods behind the work. It is designed to support reproducibility and FAIR-oriented research practices using tools the scientist already has.
 
-## Start here
+## Get started
 
-Read the [implementation guide](docs/implementation-guide.md) for setup and a complete work cycle. Adopt and adapt the [current protocol](protocol/01.work-contract.md) for your project. The [provenance and interpretation notes](docs/provenance-and-interpretation.md) distinguish historical observations from later protocol refinements.
+1. Read the [implementation guide](docs/implementation-guide.md) and choose a small first task.
+2. Supply the [SCUTER Skill package](dist/scuter-v0.2.0.skill?raw=true) to an application that supports Skill installation, or use the [complete Markdown instructions](dist/scuter-v0.2.0.md?raw=true) through its supported instruction or document interface.
+3. Establish your Project Overview and Collaboration Log. Identify the participating assistants, project locations, and evidence required to accept a result.
+4. Direct a task, obtain a review of the actual work, and record your decision before continuing.
 
-The existing development package and its complete source are available here:
+The Markdown edition includes all companion instructions. You do not need to build the files to use them. Installation support, available integrations, and instruction following must be checked in the application you use.
 
-- [Download the v0.1.0 Skill package](skills/user-mediated-collaboration-v0.1.0.skill?raw=true).
-- [Inspect the Skill entry point and companion files](skills/user-mediated-collaboration/).
+## The scientist directs the work
 
-**Version note:** this repository initially preserves the existing `user-mediated-collaboration` v0.1.0 package byte-for-byte, including its original filename and embedded protocol snapshot `47ad152`. The current protocol includes later revisions. Moving these materials here does not make that older package equivalent to the current protocol. Reconciliation, regeneration under the SCUTER package name, and platform testing remain development work. Do not load only `SKILL.md` without its referenced companion files.
+The User defines and revises the scientific question, selects which assistant acts next, evaluates evidence, connects findings across workstreams, and decides what enters the accepted project record. AI participants implement, review, challenge, and repair within that direction.
 
-## What is here
+The [protocol](protocol/01.work-contract.md) provides five directives: User authority, prior-art lineage, reference validation, collaborative practice, and the durable record. Adopt and adapt it to your project, record those choices, and provide the same adopted version to every participant.
 
-| Location | Purpose |
+## Materials
+
+| Resource | Purpose |
 | --- | --- |
-| `protocol/01.work-contract.md` | Maintained protocol source, including directives, provisions, worked examples, and reusable templates |
-| `docs/implementation-guide.md` | Setup, assignments, review, acceptance, handoffs, and troubleshooting |
-| `docs/provenance-and-interpretation.md` | Scope and interpretation of the supporting experience |
-| `skills/` | Existing development Skill source, manifest, and matching installable archive |
-| `provenance/` | Exact source commit, original-to-new path mapping, content hashes, and import verification |
-| `tools/import_from_paper.py` | Reproducible, allowlisted snapshot-import and verification utility |
+| [Implementation guide](docs/implementation-guide.md) | Setup and the complete task-review-acceptance cycle |
+| [Protocol and templates](protocol/01.work-contract.md) | Directives, provisions, worked examples, and project templates |
+| [Notion setup](docs/notion-setup.md) | Shared-record structure and verification practices |
+| [Record and review guidance](docs/record-and-review.md) | Evidence, review exposure, and session provenance |
+| [Skill source](skills/scuter/SKILL.md) | Instructions and bundled companion files |
+| [Distributions](dist/) | Skill package, complete Markdown edition, and checksums |
 
-The instructions do not create service connections or confer permissions. Installation and behavior depend on the host application and project setup. No additional platform compatibility is claimed by this repository migration.
+## Development
 
-## Relationship to the paper
+Current development version: **0.2.0**. Packaging checks verify file integrity and consistency. They do not establish protocol adherence or effectiveness in a particular AI application. Record your actual application, setup, and test results when evaluating SCUTER.
 
-SCUTER was developed in [Beyond the Chat Window](https://github.com/TaylorResearchLab/beyond-the-chat-window). That repository holds the manuscript, its study record, and a version-pinned supplementary snapshot. This repository is the maintenance home for the reusable protocol and Skill materials. The initial import comes from paper commit `32be4c53532074e7a1be46f7706fc7e0c5701657`.
+Maintainers can build and verify all distributions offline using Python 3.10 or newer and this repository alone. See [development instructions](DEVELOPMENT.md).
 
-See [MIGRATION.md](MIGRATION.md) for the source-of-record boundary and exact migration scope. The initial import preserves source wording and section numbering, including references to the paper supplement. Subsequent changes should be made here and recorded as revisions, not independently edited into both repositories.
+## Companion paper
 
-## Development status and attribution
+[*Beyond the Chat Window*](https://github.com/TaylorResearchLab/beyond-the-chat-window) is the companion paper to SCUTER.
 
-The protocol was developed by Deanne M. Taylor through the work described in the companion paper. These materials are a development snapshot, not a new formal release or evidence of effectiveness across investigators. Review and release decisions remain separate from repository migration.
+## Attribution and licensing
 
-The original [CC BY 4.0 license](LICENSE.md) and [CC0 notice](LICENSE-CC0.md) are retained from the source repository. Migration preserves the existing notices; it does not relicense imported material.
+SCUTER is developed by Deanne M. Taylor. See [LICENSE.md](LICENSE.md) and [LICENSE-CC0.md](LICENSE-CC0.md) for the repository's license notices.

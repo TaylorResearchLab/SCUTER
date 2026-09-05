@@ -1,0 +1,72 @@
+name: Prepare SCUTER development package
+on:
+  push:
+    branches: [main]
+    paths: [.github/workflows/prepare-package.yml]
+permissions:
+  contents: write
+concurrency:
+  group: scuter-package-preparation
+  cancel-in-progress: false
+jobs:
+  prepare:
+    if: github.repository == 'TaylorResearchLab/SCUTER'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - name: Set standalone protocol introduction
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          path = Path('protocol/01.work-contract.md')
+          text = path.read_text(encoding='utf-8')
+          before = 'This supplement presents an example collaboration protocol for research conducted across separate AI platforms. The example is synthetic and discloses no scientific, technical, or creative content from any workspace in the retrospective study.'
+          after = 'SCUTER provides a User-directed collaboration protocol for research conducted across AI platforms. The worked examples are synthetic and illustrate the protocol and its reusable record structures.'
+          if text.count(before) != 1:
+              raise SystemExit('Expected protocol introduction not found exactly once')
+          text = text.replace(before, after).replace('this supplement', 'this protocol').replace('This supplement', 'This protocol')
+          path.write_text(text, encoding='utf-8')
+          PY
+      - name: Test and build from local files only
+        run: |
+          python3 --version
+          python3 -m unittest discover -s tests -v
+          python3 tools/build.py
+          python3 tools/build.py --check
+      - name: Audit active files and archive
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re, zipfile
+          pattern = re.compile(r'beyond.the.chat.window|\bBTCW\b|47ad152|32be4c5|migration|import_from_paper|user-mediated-collaboration', re.I)
+          checked = 0
+          for path in Path('.').rglob('*'):
+              if not path.is_file() or any(part in {'.git', '.github', '__pycache__'} for part in path.parts) or path.name.endswith('.pyc'):
+                  continue
+              if str(path) == 'README.md':
+                  body = path.read_text()
+                  body = re.sub(r'## Companion paper\n.*?(?=\n## |\Z)', '', body, flags=re.S)
+                  if pattern.search(body):
+                      raise SystemExit('Unexpected companion reference outside designated section')
+              elif path.suffix == '.skill':
+                  with zipfile.ZipFile(path) as archive:
+                      for name in archive.namelist():
+                          if pattern.search(archive.read(name).decode('utf-8')):
+                              raise SystemExit(f'Unexpected dependency in package member {name}')
+              elif pattern.search(path.read_text(encoding='utf-8')):
+                  raise SystemExit(f'Unexpected dependency in {path}')
+              checked += 1
+          print(f'PASS: {checked} active files audited; companion mention isolated to README')
+          PY
+      - name: Save verified development artifacts
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          test "$(git rev-parse origin/main)" = "$GITHUB_SHA"
+          git rm .github/workflows/prepare-package.yml
+          git add -- protocol skills dist
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'Build SCUTER 0.2.0 development artifacts from local protocol sources'
+          git push origin HEAD:main
