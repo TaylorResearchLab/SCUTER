@@ -144,10 +144,11 @@ For this directive, the unit of work is the material action; the output is a rec
 1. A material action is recorded at the time it occurs. A result held only in one participant's conversation is not a project artifact, and description of an artifact does not transfer it.
 2. A record that reports a result identifies the command, inputs, outputs, configuration, and environment sufficient to reproduce or check it.
 3. Every write to the shared record or repository is read back before the action is treated as complete. Location and structured properties are checked separately, since a success response is provisional until the object itself has been inspected.
-4. Session and model identity is recorded at the time of the action, since it is not recoverable afterward.
+4. Record a stable, project-specific chat identifier at session registration and reuse it in Agent instance ID for that session's entries. Preserve an entry's originating identifier on later edits, and identify the editing instance and date/time in the edited or appended content. Record provider and displayed model/version separately when available; do not infer them from a chat name or fill unknown historical identities by guesswork.
 5. Exposure status is recorded at the time of the action, stating whether the acting session had access to a named prior contribution. This is not recoverable afterward.
 6. A record made obsolete by later work is marked superseded rather than deleted where its history remains relevant.
-7. Before a paused workstream resumes, or a task begins that depends on another, the User identifies the Project Overview page and the specific upstream records, files, or outputs to be reviewed. Availability of context does not ensure its use, and participants do not reread the entire project before each local task unless the task is project-wide.
+7. Before a paused workstream resumes, or a task begins that depends on another, the User identifies the Project Overview page and the specific upstream records, files, or outputs to be reviewed. Availability of context does not ensure its use, and participants do not reread the entire project before each local task unless the task is project-wide. Inspect relevant entries edited since the last inspection as well as newly created entries. Created time records entry creation; Last edited time signals the latest edit, not a complete revision history or a new acceptance decision.
+8. Record directly relevant earlier-entry URLs in Reference posts, one per line. Include multiple references when combining threads. Verify the saved destinations after writing. When context is needed, follow the references backward as far as the task requires, avoiding repeated visits by page identity and reporting inaccessible posts. The entry text explains connections where needed. A reference is not an approval or a version pin; an empty historical field does not establish an absence of prior work.
 
 The record may preserve **process provenance**, such as which session supplied or drafted a proposal. Process provenance explains the workflow and supports audit. It does not confer authorship, intellectual ownership, or accountability on an AI participant, and no field assigns intellectual origin to one. AI outputs are derivative proposals: the User evaluates, revises, rejects, or adopts them, and an adopted proposal is the User's work and responsibility. See `USER-AUTHORITY`.
 
@@ -155,28 +156,33 @@ The public template uses the following core field order:
 
 1. Entry
 2. Created time
-3. Date
-4. Owner
-5. Assignment to
-6. Needs Agent A Review
-7. Needs Agent B Review
-8. Needs User Review
-9. Approved by Agent A
-10. Approved by Agent B
-11. Approved by User
-12. Status
-13. Source
-14. Next Action
-15. Summary
-16. Topic
-17. Type
-18. Reference links
-19. Repository
-20. Commit SHA
-21. Purpose
-22. Subproject
+3. Last edited time
+4. Date
+5. Agent instance ID
+6. Owner
+7. Assignment to
+8. Needs Agent A Review
+9. Needs Agent B Review
+10. Needs User Review
+11. Approved by Agent A
+12. Approved by Agent B
+13. Approved by User
+14. Status
+15. Source
+16. Next Action
+17. Summary
+18. Topic
+19. Type
+20. Reference posts
+21. Reference links
+22. Repository
+23. Commit SHA
+24. Purpose
+25. Subproject
 
-Additional fields may record timestamp, lock state, review response, branch or pull request, commit date, session and model identity, and exposure status.
+Agent A and Agent B identify the participants whose review and endorsement fields are being used; the User records the chosen field-name mapping. Their lead and reviewer roles are assigned per task. The example implementation named these fields for GPT and Claude. Agent instance ID identifies a particular chat, not its current task role.
+
+Additional fields may record lock state, review response, branch or pull request, commit date, displayed provider/model identity, and exposure status. Detailed methods, results, and dated reviews belong in the entry body and linked artifacts rather than only in summary properties.
 
 # S3. Protocol provisions
 
@@ -326,6 +332,10 @@ For the synthetic project, a result is accepted only when:
 | Field | Example value |
 | --- | --- |
 | Entry | Initial pipeline implementation completed in sandbox |
+| Created time | Automatically recorded at entry creation |
+| Last edited time | Automatically maintained by the notebook service |
+| Agent instance ID | `Project-X-A-01` (synthetic registered session label) |
+| Reference posts | `[FULL URL OF THE ASSIGNMENT ENTRY]` (placeholder, not a retrievable link) |
 | Source | Agent A; Code/Run |
 | Owner | Agent A |
 | Type | Implementation |
@@ -416,6 +426,9 @@ The User runs commit `89abcde` with `config/authoritative.yaml` in the final com
 | Review and approval fields | `[ROUTING, ENDORSEMENT, USER ACCEPTANCE]` |
 | Deliberation | `[WHEN USED]` |
 | Required log fields | `[LIST]` |
+| Instance registration | `[STABLE CHAT ID AND REGISTRATION ENTRY]` |
+| Reference posts | `[DIRECT EARLIER-ENTRY URLS, ONE PER LINE; MULTIPLE WHEN NEEDED]` |
+| Last edited time | `[NATIVE LAST-EDIT FIELD; INSPECT RELEVANT RECENT EDITS]` |
 | Write read-back | `[HOW VERIFIED]` |
 | Handoff trigger | `[WHEN]` |
 | Context reorientation | `[CURRENT STATE AND TASK-RELEVANT UPSTREAM DEPENDENCIES]` |

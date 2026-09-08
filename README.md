@@ -9,7 +9,7 @@ SCUTER helps scientists work with multiple AI assistants while directing the res
 ## Get started
 
 1. Read the [implementation guide](docs/implementation-guide.md) and choose a small first task.
-2. Supply the [SCUTER Skill package](dist/scuter-v0.2.0.skill?raw=true) to an application that supports Skill installation, or use the [complete Markdown instructions](dist/scuter-v0.2.0.md?raw=true) through its supported instruction or document interface.
+2. Supply the [SCUTER Skill package](dist/scuter-v0.2.1-dev.skill?raw=true) to an application that supports Skill installation, or use the [complete Markdown instructions](dist/scuter-v0.2.1-dev.md?raw=true) through its supported instruction or document interface.
 3. Establish your Project Overview and Collaboration Log. Identify the participating assistants, project locations, and evidence required to accept a result.
 4. Direct a task, obtain a review of the actual work, and record your decision before continuing.
 
@@ -34,7 +34,7 @@ The [protocol](protocol/01.work-contract.md) provides five directives: User auth
 
 ## Development
 
-Current development version: **0.2.0**. Packaging checks verify file integrity and consistency. They do not establish protocol adherence or effectiveness in a particular AI application. Record your actual application, setup, and test results when evaluating SCUTER.
+Current development version: **0.2.1-dev**. Packaging checks verify file integrity and consistency. They do not establish protocol adherence or effectiveness in a particular AI application. Record your actual application, setup, and test results when evaluating SCUTER.
 
 Maintainers can build and verify all distributions offline using Python 3.10 or newer and this repository alone. See [development instructions](DEVELOPMENT.md).
 
