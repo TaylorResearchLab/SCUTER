@@ -2,7 +2,7 @@
 name: scuter
 description: Coordinate User-directed scientific collaboration among AI assistants through a durable project record. Use when a scientist asks to adopt SCUTER, establish a collaboration protocol, assign or review research tasks, maintain a Collaboration Log, validate citations, record prior-art searches, or prepare a handoff between sessions.
 metadata:
-  version: "0.2.0"
+  version: "0.2.1-dev"
   status: "development"
 ---
 
@@ -28,11 +28,17 @@ Release requirements are evaluated under the adopted protocol. An unmet requirem
 
 Read the [implementation guide](references/implementation-guide.md). Establish the scientific objective, background resources, participants, access boundaries, accepted evidence, and governing locations with the User. Use the S8 compact template in the protocol. Confirm the destination before creating a shared record. For Notion, read the [setup guidance](references/notion-setup.md) and the actual tool schemas exposed in the current session.
 
+Register the current chat once with a stable project-specific identifier. Use it in Agent instance ID for entries this session originates; do not copy a departing chat's identity. The User may choose participant field names, with Agent A and Agent B as the public labels. Lead and reviewer roles remain task-specific.
+
 ## Work on a bounded assignment
 
 Read the current Project Overview, assignment, and named upstream artifacts. Check source files, inputs, configuration, and relevant decisions rather than relying only on a prior assistant's summary. Missing information is a limitation to report, not a fact to infer. Do not load unrelated project material merely because it is available.
 
 Produce the requested artifact and record its location, version, evidence, limitations, and next action. Distinguish proposed text, sandbox evidence, committed source, and final execution in the User-designated environment. Preserve the commands, inputs, outputs, configuration, and environment needed to inspect a reported result.
+
+Use Reference posts for the full URLs of directly relevant earlier entries, one per line, including multiple references when combining threads. Verify saved destinations by fetching the entry or reading faithful structured rows; preserve native page-mention destinations. Follow references only as far as the task requires and avoid repeated visits by page ID. Report inaccessible posts. Inspect relevant recent Last edited time values as well as new entries.
+
+Preserve an entry's originating Agent instance ID when editing it. Identify the editing instance, date/time, and change in dated content, retaining prior material or a version link where needed. Verify attribution on read-back. Native creation and last-edit timestamps are service-maintained signals, not an edit history or an acceptance decision.
 
 ## Review and hand off
 
