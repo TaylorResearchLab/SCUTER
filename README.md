@@ -8,6 +8,10 @@ SCUTER helps scientists work with multiple AI assistants while directing the res
 
 ## Get started
 
+**New to SCUTER? Start with the [60-second quick start](QUICKSTART.md).** In the simplest case, give the SCUTER Skill to an AI application that supports Skill installation, tell it that you are the User, provide the project locations and first bounded task, and begin.
+
+For the fuller setup:
+
 1. Read the [implementation guide](docs/implementation-guide.md) and choose a small first task.
 2. Supply the [SCUTER Skill package](dist/scuter-v0.2.1-dev.skill?raw=true) to an application that supports Skill installation, or use the [complete Markdown instructions](dist/scuter-v0.2.1-dev.md?raw=true) through its supported instruction or document interface.
 3. Establish your Project Overview and Collaboration Log. Identify the participating assistants, project locations, and evidence required to accept a result.
@@ -25,6 +29,7 @@ The [protocol](protocol/01.work-contract.md) provides five directives: User auth
 
 | Resource | Purpose |
 | --- | --- |
+| [Quick start](QUICKSTART.md) | Fastest path from download to a first SCUTER task |
 | [Implementation guide](docs/implementation-guide.md) | Setup and the complete task-review-acceptance cycle |
 | [Protocol and templates](protocol/01.work-contract.md) | Directives, provisions, worked examples, and project templates |
 | [Notion setup](docs/notion-setup.md) | Shared-record structure and verification practices |
