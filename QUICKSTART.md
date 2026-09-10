@@ -1,14 +1,20 @@
 # SCUTER quick start
 
-For most users, "download SCUTER" means **download one `.skill` file and upload that file into your AI application**. You do not need to build SCUTER from source.
+For most users, "download SCUTER" means **download one `.skill` file and upload that exact file into your AI application**. You do not need to build SCUTER from source.
 
 ## 1. Download the SCUTER `.skill` file
 
 Download this file to your computer:
 
-**[Download `scuter-v0.2.1-dev.skill`](https://github.com/TaylorResearchLab/SCUTER/raw/refs/heads/main/dist/scuter-v0.2.1-dev.skill)**
+**[Download `scuter-v0.2.1-dev.skill`](https://raw.githubusercontent.com/TaylorResearchLab/SCUTER/e4f739bb7257fd0743fcaf1d98a852bf3d34ebc7/dist/scuter-v0.2.1-dev.skill)**
 
 The `.skill` file is a packaged set of SCUTER instructions. **Do not unzip it, rename it, or copy its contents into the chat.** Keep the downloaded file intact.
+
+If clicking the link does not immediately download the file, use your browser's **Save Link As...** command and save it with this exact filename:
+
+```text
+scuter-v0.2.1-dev.skill
+```
 
 ## 2. Upload that exact `.skill` file into your AI application
 
@@ -28,7 +34,7 @@ After the Skill is loaded, tell the assistant:
 
 ### If your AI application does not support `.skill` files
 
-Use the **[complete Markdown instructions](https://github.com/TaylorResearchLab/SCUTER/raw/refs/heads/main/dist/scuter-v0.2.1-dev.md)** instead. Download or open that Markdown file and provide it through the application's supported project-instructions, persistent-instructions, or instruction-document mechanism.
+Use the **[complete Markdown instructions](https://raw.githubusercontent.com/TaylorResearchLab/SCUTER/e4f739bb7257fd0743fcaf1d98a852bf3d34ebc7/dist/scuter-v0.2.1-dev.md)** instead. Download or open that Markdown file and provide it through the application's supported project-instructions, persistent-instructions, or instruction-document mechanism.
 
 The Markdown edition contains the same SCUTER entry instructions and companion guidance in one readable document. It is the fallback for applications that cannot install the packaged `.skill` file.
 
