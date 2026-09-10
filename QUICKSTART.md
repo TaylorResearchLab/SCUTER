@@ -1,6 +1,6 @@
 # SCUTER quick start
 
-For most users, "download SCUTER" means **download one `.skill` file and upload that exact file into your AI application**. You do not need to build SCUTER from source.
+For most users, "download SCUTER" means **download one `.skill` file and upload that exact file into your AI application**. In applications that accept `.skill` files as chat attachments, this can be as simple as dragging the file directly into the chat. You do not need to build SCUTER from source.
 
 ## 1. Download the SCUTER `.skill` file
 
@@ -8,7 +8,7 @@ Download this file to your computer:
 
 **[Download `scuter-v0.2.1-dev.skill`](https://raw.githubusercontent.com/TaylorResearchLab/SCUTER/e4f739bb7257fd0743fcaf1d98a852bf3d34ebc7/dist/scuter-v0.2.1-dev.skill)**
 
-The `.skill` file is a packaged set of SCUTER instructions. **Do not unzip it, rename it, or copy its contents into the chat.** Keep the downloaded file intact.
+The `.skill` file is a packaged set of SCUTER instructions. **Do not unzip it, rename it, or edit its contents.** Keep the downloaded file intact.
 
 If clicking the link does not immediately download the file, use your browser's **Save Link As...** command and save it with this exact filename:
 
@@ -16,17 +16,17 @@ If clicking the link does not immediately download the file, use your browser's 
 scuter-v0.2.1-dev.skill
 ```
 
-## 2. Upload that exact `.skill` file into your AI application
+## 2. Upload that exact `.skill` file to the AI assistant
 
-Use the application's interface for installing or uploading Skills. The wording varies by application and may look like **Add Skill**, **Install Skill**, **Upload Skill**, or a similar control.
+If the application accepts `.skill` files as chat attachments, **upload or drag `scuter-v0.2.1-dev.skill` directly into the chat**. For applications such as ChatGPT or Claude where this is supported, that may be all that is required for the assistant to recognize and use the Skill.
 
-Select the file you just downloaded:
+Some applications instead provide a dedicated interface for Skills. In that case, use **Add Skill**, **Install Skill**, **Upload Skill**, or the application's equivalent control and select the same file:
 
 ```text
 scuter-v0.2.1-dev.skill
 ```
 
-The important step is that the AI application receives the actual `.skill` file. Merely pasting the GitHub link or the filename into a chat does not install SCUTER.
+The important step is that the AI assistant receives the actual `.skill` file. Merely pasting the GitHub link or filename into the chat is not the same as uploading the file.
 
 After the Skill is loaded, tell the assistant:
 
