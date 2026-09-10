@@ -8,14 +8,18 @@ SCUTER helps scientists work with multiple AI assistants while directing the res
 
 ## Get started
 
-**New to SCUTER? Start with the [60-second quick start](QUICKSTART.md).** In the simplest case, give the SCUTER Skill to an AI application that supports Skill installation, tell it that you are the User, provide the project locations and first bounded task, and begin.
+**New to SCUTER? Start with the [60-second quick start](QUICKSTART.md).**
 
-For the fuller setup:
+In the simplest case:
 
-1. Read the [implementation guide](docs/implementation-guide.md) and choose a small first task.
-2. Supply the [SCUTER Skill package](dist/scuter-v0.2.1-dev.skill?raw=true) to an application that supports Skill installation, or use the [complete Markdown instructions](dist/scuter-v0.2.1-dev.md?raw=true) through its supported instruction or document interface.
-3. Establish your Project Overview and Collaboration Log. Identify the participating assistants, project locations, and evidence required to accept a result.
-4. Direct a task, obtain a review of the actual work, and record your decision before continuing.
+1. **Download the actual `.skill` file to your computer:** [download `scuter-v0.2.1-dev.skill`](https://github.com/TaylorResearchLab/SCUTER/raw/refs/heads/main/dist/scuter-v0.2.1-dev.skill).
+2. **Do not unzip or edit it.** In your AI application's Skill interface, choose its **Add Skill**, **Install Skill**, **Upload Skill**, or equivalent control and upload that exact `.skill` file.
+3. Tell the assistant: **"Use SCUTER for this project. I am the User."**
+4. Give it your project locations, first bounded task, and acceptance criteria.
+
+If the application does not support `.skill` files, use the [complete Markdown instructions](https://github.com/TaylorResearchLab/SCUTER/raw/refs/heads/main/dist/scuter-v0.2.1-dev.md) through its supported project-instructions, persistent-instructions, or instruction-document interface.
+
+For the fuller setup, read the [implementation guide](docs/implementation-guide.md). Establish your Project Overview and Collaboration Log, identify the participating assistants and project locations, and state the evidence required before you will accept a result. Then direct a bounded task, obtain review of the actual work, and record your decision before continuing.
 
 The Markdown edition includes all companion instructions. You do not need to build the files to use them. Installation support, available integrations, and instruction following must be checked in the application you use.
 
