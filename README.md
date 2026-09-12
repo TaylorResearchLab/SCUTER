@@ -12,14 +12,14 @@ SCUTER helps scientists work with multiple AI assistants while directing the res
 
 In the simplest case:
 
-1. **Download the actual `.skill` file to your computer:** [download `scuter-v0.2.2-dev.skill`](https://raw.githubusercontent.com/TaylorResearchLab/SCUTER/32be5a0e19a055e73acf7f1b5d265707e35fbfe4/dist/scuter-v0.2.2-dev.skill).
+1. **Download the actual `.skill` file to your computer:** [download `scuter-v0.2.2-dev.skill`](https://raw.githubusercontent.com/TaylorResearchLab/SCUTER/eb105fa3f26919d0b569f7210d643fe96135ab34/dist/scuter-v0.2.2-dev.skill).
 2. **Do not unzip or edit it.** If your AI application accepts `.skill` files as chat attachments, simply upload or drag that exact `.skill` file into the chat. The assistant can then recognize and use the Skill. If the application instead provides a dedicated **Add Skill**, **Install Skill**, **Upload Skill**, or equivalent control, use that interface to upload the same file.
 3. Tell the assistant: **"Use SCUTER for this project. I am the User."**
 4. Give it your project locations, first bounded task, and acceptance criteria.
 
 If clicking the `.skill` link does not immediately download the file, use your browser's **Save Link As...** command and save it with the filename `scuter-v0.2.2-dev.skill`.
 
-If the application does not support `.skill` files, use the [complete Markdown instructions](https://raw.githubusercontent.com/TaylorResearchLab/SCUTER/32be5a0e19a055e73acf7f1b5d265707e35fbfe4/dist/scuter-v0.2.2-dev.md) through its supported project-instructions, persistent-instructions, or instruction-document interface.
+If the application does not support `.skill` files, use the [complete Markdown instructions](https://raw.githubusercontent.com/TaylorResearchLab/SCUTER/eb105fa3f26919d0b569f7210d643fe96135ab34/dist/scuter-v0.2.2-dev.md) through its supported project-instructions, persistent-instructions, or instruction-document interface.
 
 For the fuller setup, read the [implementation guide](docs/implementation-guide.md). Establish your Project Overview and Collaboration Log, identify the participating assistants and project locations, and state the evidence required before you will accept a result. Then direct a bounded task, obtain review of the actual work, and record your decision before continuing.
 
@@ -45,7 +45,7 @@ The [protocol](protocol/01.work-contract.md) provides five directives: User auth
 
 ## Development
 
-Current development version: **0.2.1-dev**. Packaging checks verify file integrity and consistency. They do not establish protocol adherence or effectiveness in a particular AI application. Record your actual application, setup, and test results when evaluating SCUTER.
+Current development version: **0.2.2-dev**. Packaging checks verify file integrity and consistency. They do not establish protocol adherence or effectiveness in a particular AI application. Record your actual application, setup, and test results when evaluating SCUTER.
 
 Maintainers can build and verify all distributions offline using Python 3.10 or newer and this repository alone. See [development instructions](DEVELOPMENT.md).
 
