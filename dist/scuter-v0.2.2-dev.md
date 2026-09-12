@@ -28,7 +28,7 @@ Read the [complete protocol and templates](references/protocol.md) when adopting
 
 1. **USER-AUTHORITY.** The User directs scope, methods, scientific questions, access, acceptance, and release. AI participants propose, implement, review, challenge, and repair. No participant accepts its own result into governing project state. Report material concerns directly to the User.
 2. **PRIOR-ART-LINEAGE.** Establish the User's coverage declaration: FULL, CLAIMS, CITATION, or a recorded custom scope. Conduct and record proposition-specific searches required by that declaration. Preserve null searches and candidate dispositions. A different participant establishes lineage for the introducing participant's claims, as specified by the protocol. Do not infer novelty from an unperformed search.
-3. **REFERENCE-VALIDATION.** Enter a proposed reference as Provisional. Check an authoritative source for bibliographic identity and support for the assigned claim. Obtain another participant's check and record uncertainties. The User determines acceptance. A resolved identifier or successful build alone is not validation. Cite empirical, theoretical, methodological, mechanistic, interpretive, and externally sourced quantitative scientific claims. Do not exempt a claim merely because it is described as common knowledge, standard, or well known. Current-project hypotheses, assumptions, derivations, and results need no external citation only for content that genuinely originates in the present work; external premises still require citation. Novelty or priority statements also require the applicable `PRIOR-ART-LINEAGE` search. When uncertain whether an external scientific statement requires citation, cite and validate rather than invoke common knowledge.
+3. **REFERENCE-VALIDATION.** Before using a citation, ask: **Am I getting this information from the actual cited source text I inspected, or from memory?** Memory may suggest a candidate source but never establishes what it says. Inspect the actual paper or authoritative source text for claim support; search snippets, generated summaries, secondary descriptions, citation chains, and bibliographic metadata alone are not sufficient. If only an abstract is inspected, record that fact and support only claims explicitly stated there. If the relevant source text is inaccessible, record it as inaccessible or unverified rather than describing it from memory. Enter a proposed reference as Provisional. Check an authoritative source for bibliographic identity and support for the assigned claim. Obtain another participant's check and record uncertainties. The User determines acceptance. A resolved identifier or successful build alone is not validation. Cite empirical, theoretical, methodological, mechanistic, interpretive, and externally sourced quantitative scientific claims. Do not exempt a claim merely because it is described as common knowledge, standard, or well known. Current-project hypotheses, assumptions, derivations, and results need no external citation only for content that genuinely originates in the present work; external premises still require citation. Novelty or priority statements also require the applicable `PRIOR-ART-LINEAGE` search. When uncertain whether an external scientific statement requires citation, cite and validate rather than invoke common knowledge.
 4. **PRACTICE.** Be constructive and substantive. Check descriptions against actual artifacts before relying on them. Distinguish inherited assumptions from verified evidence. State errors and consequences directly. When a result becomes a principal claim or work resumes, identify its premises and what observations would falsify them. Default new scientific propositions to `HYPOTHESIS ONLY: not source-supported`; promotion requires claim-specific evidence and User acceptance.
 5. **DURABLE-RECORD.** Record material assignments, decisions, work, reviews, corrections, searches, run evidence, artifact locations, and next actions when they occur. Read back every shared-record or repository write, checking location and retained properties separately. Record session identity and exposure at the time of action. Preserve relevant superseded history.
 
@@ -146,7 +146,7 @@ For this directive, the unit of work is the proposition; the output is a search 
 
 1. Each statement requiring support is reduced to its constituent propositions. Searches address one proposition at a time rather than a general topic, so that the proposition each search addressed is identifiable.
 2. Prior art exploration typically utilizes Google Scholar, PubMed, arXiv, bioRxiv and other scholarly resources related to a topic. Useful strategies include keyword and synonym searches, backward citation tracking, and forward citation chaining.
-3. Abstracts are used to screen results for relevance to the proposition.
+3. Abstracts are used to screen results for relevance to the proposition. An abstract is source text, but inspection of an abstract is not represented as inspection of the full paper. If only the abstract is accessible, record the source as abstract-only and limit any support claim to what is explicitly stated there.
 4. Search terms, databases, dates, and results are entered in the search record and attributed to the participant who conducted the search.
 5. A search returning no relevant results is repeated with alternative terms before absence is recorded. No claim of novelty rests on a single unsuccessful search.
 6. **Searches returning nothing relevant are retained with the same detail as searches that return candidates**: date, databases queried, the exact terms used, and the strategy followed. An absence of prior art is supported only by the searches actually conducted, and only as of the dates on which they were conducted. A null result obtained well before submission is repeated before the claim it supports is released.
@@ -161,6 +161,12 @@ For this directive, the unit of work is the proposition; the output is a search 
 *Display number: DIRECTIVE THREE. Release requirement.*
 
 For this directive, the unit of work is the reference; the output is a citation ledger entry.
+
+### Source-text inspection gate
+
+Before using a reference as support, the acting participant asks: **Am I getting this information from the actual text of the cited source that I inspected, or from memory?** Claim support is established from the cited source text, not from model memory. Model memory may suggest search terms, authors, titles, or candidate references, but it is only a lead to verify and is never evidence that a source exists or supports a claim.
+
+For a paper, the preferred basis is the actual primary source text of the paper being cited. For an authoritative non-paper source, inspect the actual authoritative source text. Search-result snippets, generated summaries, another paper's description of the source, secondary citation chains, bibliographic metadata alone, and remembered content do not establish claim-source correspondence. If only an abstract is inspected, record that limitation and support only statements explicitly present in the abstract; do not imply that the full paper was inspected. If the relevant source text cannot be accessed, record the source as inaccessible or unverified rather than describing its contents from memory.
 
 Supporting references are admitted with the following protocol:
 
@@ -571,6 +577,8 @@ The [Notion setup guide](notion-setup.md) provides a practical schema. The proto
 
 Read and adapt the [work contract](protocol.md). Its S8 template records project-specific roles, locations, scope, evidence classes, acceptance criteria, and release requirements. Select a prior-art search coverage declaration and record it. Maintain the search record separately from the claim-specific citation ledger. Apply the protocol's citation requirements when drafting or reviewing scientific text: outside empirical, theoretical, methodological, mechanistic, interpretive, and quantitative claims are cited; describing a claim as common knowledge or standard is not an exemption. Current-project hypotheses, assumptions, derivations, and results are citation-exempt only to the extent they genuinely originate in the present work.
 
+Before relying on any citation, ask whether the statement about that source comes from the actual source text inspected in the current work or from memory. Memory may identify a candidate but is not evidence. Inspect the actual paper or authoritative source text before asserting claim support. Do not substitute search snippets, generated summaries, another source's paraphrase, or a citation chain for the cited source. If only an abstract was inspected, say so and limit support to what the abstract explicitly states. If the relevant text cannot be accessed, record the source as inaccessible or unverified rather than reconstructing its contents from memory.
+
 Supply the Skill through a supported installation mechanism, or provide the complete Markdown instruction edition. Confirm that the assistant can read the entry instructions and companion protocol, guidance, and templates. The User still supplies permissions, project locations, and each transition between participants. Installing instructions does not create service connections.
 
 At the start of a session, the User supplies its assignment and a distinct project-chat label. The Agent identifies the governing protocol, current objective, available tools, and missing resources, and registers that label once in the log. It reuses the identifier in Agent instance ID for its entries. The User may name the review fields for the participating assistants; record the mapping. Displayed provider/model identity is separate from the chat label. Do not infer unexposed model or connector versions.
@@ -713,7 +721,7 @@ A second check following exposure can identify defects without constituting inde
 
 ## Review the work itself
 
-State the revision inspected, tests and sources examined, observations supported, uncertainties, and necessary repairs. Review scientific prose for uncited external claims as well as for incorrect citations. Do not accept "common knowledge," "standard," or "well known" as a citation exemption when a claim is empirical, theoretical, methodological, mechanistic, interpretive, quantitative, or has a plausible alternate convention, scope, interpretation, or domain of validity. Current-project statements are citation-exempt only where they genuinely originate in the present work; external premises remain citable. Novelty and priority statements require the applicable prior-art search in addition to citations. Criticism concerns the artifact, evidence, assumption, or method. The User resolves competing interpretations and determines acceptance.
+State the revision inspected, tests and sources examined, observations supported, uncertainties, and necessary repairs. For each material citation, distinguish source text actually inspected from information recalled from memory or inherited from another source. A reviewer does not approve claim-source correspondence based on model memory, search snippets, generated summaries, secondary descriptions, citation chains, or bibliographic metadata alone. If only an abstract was inspected, the record says abstract-only and support is limited to what the abstract explicitly states. Inaccessible source text remains inaccessible or unverified rather than being reconstructed from memory. Review scientific prose for uncited external claims as well as for incorrect citations. Do not accept "common knowledge," "standard," or "well known" as a citation exemption when a claim is empirical, theoretical, methodological, mechanistic, interpretive, quantitative, or has a plausible alternate convention, scope, interpretation, or domain of validity. Current-project statements are citation-exempt only where they genuinely originate in the present work; external premises remain citable. Novelty and priority statements require the applicable prior-art search in addition to citations. Criticism concerns the artifact, evidence, assumption, or method. The User resolves competing interpretations and determines acceptance.
 
 Review requests and approvals describe current routing and endorsement. The dated review text preserves the event. A substantive revision requires reconsidering earlier approvals, not carrying them forward automatically.
 
@@ -900,23 +908,23 @@ Creative Commons may be contacted at creativecommons.org
   "status": "development",
   "protocol_source": {
     "path": "protocol/01.work-contract.md",
-    "sha256": "273f5a7300142309761f798336788493257d23435c74ade66284a223ad253b44"
+    "sha256": "873f4323b6d0b11790c731a1211b5ef44e79add102b8dc73adf9c3418e1f7e40"
   },
   "source_files_sha256": {
     "LICENSE.md": "e92080c5a49a1081ed4fbb5c1a72d399a5baf72e384e3dc28371c7c2fb57cf81",
-    "docs/implementation-guide.md": "0c3e88ea1043411029fd30602f12f017c187ec9666422e54d3d5d0fc05c2aa1f",
+    "docs/implementation-guide.md": "9e6a399c315ba0f0f76d27e8f15447bba3aa989a8e2eabbe00c49641558589f3",
     "docs/notion-setup.md": "e81063722d0608d08f4e3b2c1f10d59dfcb2157cd63880b1f05eb94b608b2293",
-    "docs/record-and-review.md": "16f828d0bfa1366bb9e42bd6f7c1d15944e9009ab5d8580e3b8cc25342003045",
-    "protocol/01.work-contract.md": "273f5a7300142309761f798336788493257d23435c74ade66284a223ad253b44",
-    "skills/scuter/SKILL.md": "8b05d9ad69b6a36f1794fa4173642241e5fbdecf1d7a78966fb17d6db8159f11"
+    "docs/record-and-review.md": "5fddcb493268a812d9839dc827f43db75cb0b5bdb98c4eceeeca8f880e40f118",
+    "protocol/01.work-contract.md": "873f4323b6d0b11790c731a1211b5ef44e79add102b8dc73adf9c3418e1f7e40",
+    "skills/scuter/SKILL.md": "443d2c9e4eee2d2039daed5adae60744cb94fa4d188d0c6a04df47a2c1850779"
   },
   "members_sha256": {
     "LICENSE.md": "e92080c5a49a1081ed4fbb5c1a72d399a5baf72e384e3dc28371c7c2fb57cf81",
-    "SKILL.md": "8b05d9ad69b6a36f1794fa4173642241e5fbdecf1d7a78966fb17d6db8159f11",
-    "references/implementation-guide.md": "578e978e703434ed2354158b360721170f57f8d8b6ffeefbe59b63ef0d4bdc50",
+    "SKILL.md": "443d2c9e4eee2d2039daed5adae60744cb94fa4d188d0c6a04df47a2c1850779",
+    "references/implementation-guide.md": "b0d6f26ea00dfe4b27daca21ccf1f49c9939165c1a672c36223795c7ca8ce6db",
     "references/notion-setup.md": "e81063722d0608d08f4e3b2c1f10d59dfcb2157cd63880b1f05eb94b608b2293",
-    "references/protocol.md": "273f5a7300142309761f798336788493257d23435c74ade66284a223ad253b44",
-    "references/record-and-review.md": "16f828d0bfa1366bb9e42bd6f7c1d15944e9009ab5d8580e3b8cc25342003045"
+    "references/protocol.md": "873f4323b6d0b11790c731a1211b5ef44e79add102b8dc73adf9c3418e1f7e40",
+    "references/record-and-review.md": "5fddcb493268a812d9839dc827f43db75cb0b5bdb98c4eceeeca8f880e40f118"
   },
   "document_link_adjustment": "The bundled implementation guide links to references/protocol.md within the Skill."
 }

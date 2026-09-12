@@ -4,23 +4,23 @@
   "status": "development",
   "protocol_source": {
     "path": "protocol/01.work-contract.md",
-    "sha256": "273f5a7300142309761f798336788493257d23435c74ade66284a223ad253b44"
+    "sha256": "873f4323b6d0b11790c731a1211b5ef44e79add102b8dc73adf9c3418e1f7e40"
   },
   "source_files_sha256": {
     "LICENSE.md": "e92080c5a49a1081ed4fbb5c1a72d399a5baf72e384e3dc28371c7c2fb57cf81",
-    "docs/implementation-guide.md": "0c3e88ea1043411029fd30602f12f017c187ec9666422e54d3d5d0fc05c2aa1f",
+    "docs/implementation-guide.md": "9e6a399c315ba0f0f76d27e8f15447bba3aa989a8e2eabbe00c49641558589f3",
     "docs/notion-setup.md": "e81063722d0608d08f4e3b2c1f10d59dfcb2157cd63880b1f05eb94b608b2293",
-    "docs/record-and-review.md": "16f828d0bfa1366bb9e42bd6f7c1d15944e9009ab5d8580e3b8cc25342003045",
-    "protocol/01.work-contract.md": "273f5a7300142309761f798336788493257d23435c74ade66284a223ad253b44",
-    "skills/scuter/SKILL.md": "8b05d9ad69b6a36f1794fa4173642241e5fbdecf1d7a78966fb17d6db8159f11"
+    "docs/record-and-review.md": "5fddcb493268a812d9839dc827f43db75cb0b5bdb98c4eceeeca8f880e40f118",
+    "protocol/01.work-contract.md": "873f4323b6d0b11790c731a1211b5ef44e79add102b8dc73adf9c3418e1f7e40",
+    "skills/scuter/SKILL.md": "443d2c9e4eee2d2039daed5adae60744cb94fa4d188d0c6a04df47a2c1850779"
   },
   "members_sha256": {
     "LICENSE.md": "e92080c5a49a1081ed4fbb5c1a72d399a5baf72e384e3dc28371c7c2fb57cf81",
-    "SKILL.md": "8b05d9ad69b6a36f1794fa4173642241e5fbdecf1d7a78966fb17d6db8159f11",
-    "references/implementation-guide.md": "578e978e703434ed2354158b360721170f57f8d8b6ffeefbe59b63ef0d4bdc50",
+    "SKILL.md": "443d2c9e4eee2d2039daed5adae60744cb94fa4d188d0c6a04df47a2c1850779",
+    "references/implementation-guide.md": "b0d6f26ea00dfe4b27daca21ccf1f49c9939165c1a672c36223795c7ca8ce6db",
     "references/notion-setup.md": "e81063722d0608d08f4e3b2c1f10d59dfcb2157cd63880b1f05eb94b608b2293",
-    "references/protocol.md": "273f5a7300142309761f798336788493257d23435c74ade66284a223ad253b44",
-    "references/record-and-review.md": "16f828d0bfa1366bb9e42bd6f7c1d15944e9009ab5d8580e3b8cc25342003045"
+    "references/protocol.md": "873f4323b6d0b11790c731a1211b5ef44e79add102b8dc73adf9c3418e1f7e40",
+    "references/record-and-review.md": "5fddcb493268a812d9839dc827f43db75cb0b5bdb98c4eceeeca8f880e40f118"
   },
   "document_link_adjustment": "The bundled implementation guide links to references/protocol.md within the Skill."
 }
