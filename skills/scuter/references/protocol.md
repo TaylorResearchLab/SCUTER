@@ -68,7 +68,7 @@ For this directive, the unit of work is the proposition; the output is a search 
 
 1. Each statement requiring support is reduced to its constituent propositions. Searches address one proposition at a time rather than a general topic, so that the proposition each search addressed is identifiable.
 2. Prior art exploration typically utilizes Google Scholar, PubMed, arXiv, bioRxiv and other scholarly resources related to a topic. Useful strategies include keyword and synonym searches, backward citation tracking, and forward citation chaining.
-3. Abstracts are used to screen results for relevance to the proposition. An abstract is source text, but inspection of an abstract is not represented as inspection of the full paper. If only the abstract is accessible, record the source as abstract-only and limit any support claim to what is explicitly stated there.
+3. Abstracts may be used to screen results for relevance to the proposition, but an abstract alone cannot validate a citation or establish claim support. A retained candidate proceeds to `REFERENCE-VALIDATION` only after the complete primary text is obtained and inspected.
 4. Search terms, databases, dates, and results are entered in the search record and attributed to the participant who conducted the search.
 5. A search returning no relevant results is repeated with alternative terms before absence is recorded. No claim of novelty rests on a single unsuccessful search.
 6. **Searches returning nothing relevant are retained with the same detail as searches that return candidates**: date, databases queried, the exact terms used, and the strategy followed. An absence of prior art is supported only by the searches actually conducted, and only as of the dates on which they were conducted. A null result obtained well before submission is repeated before the claim it supports is released.
@@ -84,11 +84,13 @@ For this directive, the unit of work is the proposition; the output is a search 
 
 For this directive, the unit of work is the reference; the output is a citation ledger entry.
 
-### Source-text inspection gate
+### Complete-primary-text requirement
 
-Before using a reference as support, the acting participant asks: **Am I getting this information from the actual text of the cited source that I inspected, or from memory?** Claim support is established from the cited source text, not from model memory. Model memory may suggest search terms, authors, titles, or candidate references, but it is only a lead to verify and is never evidence that a source exists or supports a claim.
+**All citations must be sourced from the complete primary text of the cited work.** Claim-source correspondence is established only from primary text that the acting participant has actually inspected. Model memory may suggest search terms, authors, titles, or candidate references, but memory is never evidence that a source exists or supports a claim.
 
-For a paper, the preferred basis is the actual primary source text of the paper being cited. For an authoritative non-paper source, inspect the actual authoritative source text. Search-result snippets, generated summaries, another paper's description of the source, secondary citation chains, bibliographic metadata alone, and remembered content do not establish claim-source correspondence. If only an abstract is inspected, record that limitation and support only statements explicitly present in the abstract; do not imply that the full paper was inspected. If the relevant source text cannot be accessed, record the source as inaccessible or unverified rather than describing its contents from memory.
+For a paper, inspect the complete paper rather than relying on the abstract. For another citable primary source, inspect the complete primary source needed to evaluate the cited claim. Abstracts, search-result snippets, generated summaries, another paper's description, secondary citation chains, bibliographic metadata, and remembered content may help locate or screen a source but cannot validate it or support a manuscript claim.
+
+If the acting participant cannot access the complete primary text, citation validation stops. The participant asks the User to provide the complete primary text or access to it. Obtaining and supplying the source material needed for review is the User's responsibility as project leader. Until the complete primary text is available and inspected, the reference remains Provisional, inaccessible, or unverified and cannot be used as evidentiary support for a project claim.
 
 Supporting references are admitted with the following protocol:
 

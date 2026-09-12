@@ -4,23 +4,23 @@
   "status": "development",
   "protocol_source": {
     "path": "protocol/01.work-contract.md",
-    "sha256": "873f4323b6d0b11790c731a1211b5ef44e79add102b8dc73adf9c3418e1f7e40"
+    "sha256": "38cd6ee79a2e3f5bbbfa010a2898a0b7df5304050782fad49e1d454aa930f857"
   },
   "source_files_sha256": {
     "LICENSE.md": "e92080c5a49a1081ed4fbb5c1a72d399a5baf72e384e3dc28371c7c2fb57cf81",
-    "docs/implementation-guide.md": "9e6a399c315ba0f0f76d27e8f15447bba3aa989a8e2eabbe00c49641558589f3",
-    "docs/notion-setup.md": "e81063722d0608d08f4e3b2c1f10d59dfcb2157cd63880b1f05eb94b608b2293",
-    "docs/record-and-review.md": "5fddcb493268a812d9839dc827f43db75cb0b5bdb98c4eceeeca8f880e40f118",
-    "protocol/01.work-contract.md": "873f4323b6d0b11790c731a1211b5ef44e79add102b8dc73adf9c3418e1f7e40",
-    "skills/scuter/SKILL.md": "443d2c9e4eee2d2039daed5adae60744cb94fa4d188d0c6a04df47a2c1850779"
+    "docs/implementation-guide.md": "e0af99475b4cabe954afbc29339a372728fd3cab34cebcb00999b426961cca52",
+    "docs/notion-setup.md": "6808fc278e3f86db98ecdaef141dd43fd6faa05b2f698bae7293780eba04ac5e",
+    "docs/record-and-review.md": "649f457c7dfdadb230b0f60d3d42d23d8262e6703521ca13ac113f9714b16b5d",
+    "protocol/01.work-contract.md": "38cd6ee79a2e3f5bbbfa010a2898a0b7df5304050782fad49e1d454aa930f857",
+    "skills/scuter/SKILL.md": "0deb39b2fecdc8a70b46715ac5477c4280875cba54767defd2d56b800d52956b"
   },
   "members_sha256": {
     "LICENSE.md": "e92080c5a49a1081ed4fbb5c1a72d399a5baf72e384e3dc28371c7c2fb57cf81",
-    "SKILL.md": "443d2c9e4eee2d2039daed5adae60744cb94fa4d188d0c6a04df47a2c1850779",
-    "references/implementation-guide.md": "b0d6f26ea00dfe4b27daca21ccf1f49c9939165c1a672c36223795c7ca8ce6db",
-    "references/notion-setup.md": "e81063722d0608d08f4e3b2c1f10d59dfcb2157cd63880b1f05eb94b608b2293",
-    "references/protocol.md": "873f4323b6d0b11790c731a1211b5ef44e79add102b8dc73adf9c3418e1f7e40",
-    "references/record-and-review.md": "5fddcb493268a812d9839dc827f43db75cb0b5bdb98c4eceeeca8f880e40f118"
+    "SKILL.md": "0deb39b2fecdc8a70b46715ac5477c4280875cba54767defd2d56b800d52956b",
+    "references/implementation-guide.md": "b517b325fbe7326e086b1355ce55520b38439ff5842b63f9ab711106dd8607bf",
+    "references/notion-setup.md": "6808fc278e3f86db98ecdaef141dd43fd6faa05b2f698bae7293780eba04ac5e",
+    "references/protocol.md": "38cd6ee79a2e3f5bbbfa010a2898a0b7df5304050782fad49e1d454aa930f857",
+    "references/record-and-review.md": "649f457c7dfdadb230b0f60d3d42d23d8262e6703521ca13ac113f9714b16b5d"
   },
   "document_link_adjustment": "The bundled implementation guide links to references/protocol.md within the Skill."
 }

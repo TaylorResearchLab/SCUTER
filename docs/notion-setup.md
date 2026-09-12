@@ -2,7 +2,7 @@
 
 Confirm the intended workspace and parent page with the User before creating records. Use the actual tool schemas available to the current session; connector names and accepted parameters can vary.
 
-Create a Project Overview, one Collaboration Log, a prior-art search record, and a citation ledger. Add numbered notebooks for longer methods and analyses as needed. The Overview states what currently governs. The log preserves material actions, evidence, decisions, and next steps.
+Create a Project Overview, one Collaboration Log, a prior-art search record, and a citation ledger. Add numbered notebooks for longer methods and analyses as needed. The Overview states what currently governs. The log preserves material actions, evidence, decisions, and next steps. The citation ledger records whether the complete primary text was actually inspected for each reference. Abstract-only, snippet-only, memory-based, secondary-source, or inaccessible candidates are not validated citations. If complete primary text is unavailable, the acting participant asks the User to provide the text or access to it before validation continues.
 
 Evidence-state labels are proposition-specific. When an entry contains more than one scientific proposition, do not use one row-level checkbox or status to imply that all are supported. Label the exact proposition in the entry body or maintain separate claim records: `HYPOTHESIS ONLY: not source-supported` is the default, and `EVIDENCE SUPPORTED: [specific proposition]` is used only after the User accepts the evidence for that proposition.
 
