@@ -28,7 +28,7 @@ Read the [complete protocol and templates](references/protocol.md) when adopting
 
 1. **USER-AUTHORITY.** The User directs scope, methods, scientific questions, access, acceptance, and release. AI participants propose, implement, review, challenge, and repair. No participant accepts its own result into governing project state. Report material concerns directly to the User.
 2. **PRIOR-ART-LINEAGE.** Establish the User's coverage declaration: FULL, CLAIMS, CITATION, or a recorded custom scope. Conduct and record proposition-specific searches required by that declaration. Preserve null searches and candidate dispositions. A different participant establishes lineage for the introducing participant's claims, as specified by the protocol. Do not infer novelty from an unperformed search.
-3. **REFERENCE-VALIDATION.** Enter a proposed reference as Provisional. Check an authoritative source for bibliographic identity and support for the assigned claim. Obtain another participant's check and record uncertainties. The User determines acceptance. A resolved identifier or successful build alone is not validation.
+3. **REFERENCE-VALIDATION.** Enter a proposed reference as Provisional. Check an authoritative source for bibliographic identity and support for the assigned claim. Obtain another participant's check and record uncertainties. The User determines acceptance. A resolved identifier or successful build alone is not validation. Cite empirical, theoretical, methodological, mechanistic, interpretive, and externally sourced quantitative scientific claims. Do not exempt a claim merely because it is described as common knowledge, standard, or well known. Current-project hypotheses, assumptions, derivations, and results need no external citation only for content that genuinely originates in the present work; external premises still require citation. Novelty or priority statements also require the applicable `PRIOR-ART-LINEAGE` search. When uncertain whether an external scientific statement requires citation, cite and validate rather than invoke common knowledge.
 4. **PRACTICE.** Be constructive and substantive. Check descriptions against actual artifacts before relying on them. Distinguish inherited assumptions from verified evidence. State errors and consequences directly. When a result becomes a principal claim or work resumes, identify its premises and what observations would falsify them. Default new scientific propositions to `HYPOTHESIS ONLY: not source-supported`; promotion requires claim-specific evidence and User acceptance.
 5. **DURABLE-RECORD.** Record material assignments, decisions, work, reviews, corrections, searches, run evidence, artifact locations, and next actions when they occur. Read back every shared-record or repository write, checking location and retained properties separately. Record session identity and exposure at the time of action. Preserve relevant superseded history.
 
@@ -171,6 +171,19 @@ Supporting references are admitted with the following protocol:
 5. Each reviewer records approval, clarification or objection to a source citation. The User determines whether the source citation is accepted into the project record.
 6. An unresolved, broken, mismatched, inaccessible, or unvalidated reference blocks merge and release.
 
+### Citation requirements
+
+The following rules determine when a scientific statement requires an external citation. Describing a statement as "common knowledge," "standard," "well known," or similar does not by itself exempt it from citation.
+
+1. **Current-project hypothesis, assumption, derivation, or result.** An external citation is not required when the statement genuinely originates in the current project. It is clearly identified as a hypothesis, assumption, derivation, observation, or result of the present work and linked to the relevant project evidence or derivation. Any external premise on which it depends remains subject to citation.
+2. **Pure mathematical identity or explicit definition.** A citation is generally not required for an identity derived directly from mathematics or for a definition introduced explicitly by the present work. A named theorem, established method, conventional definition, or result with an identifiable scholarly origin is cited when that origin is relevant.
+3. **Claim derived from outside work.** Any empirical, theoretical, methodological, mechanistic, or interpretive claim originating outside the current project is cited to an appropriate source.
+4. **Standard scientific fact.** A scientific statement is not exempt from citation merely because it is described as standard or commonly known. If there is any plausible alternate convention, scope, interpretation, population, experimental context, or domain of validity, an appropriate source is cited.
+5. **Quantitative statement.** A numerical value, range, rate, threshold, effect size, prevalence, parameter, or other quantitative scientific statement is cited unless it is directly calculated, measured, or derived in the current work. Internally derived quantities are linked to the corresponding method, data, calculation, or result.
+6. **Novelty or priority statement.** A claim that a method, result, observation, interpretation, or resource is novel, first, unique, or previously unreported requires citation to the closest relevant prior work and the applicable recorded search under `PRIOR-ART-LINEAGE`. Citations alone do not establish absence of prior art. Cite only what is needed to support the specific comparison or priority statement rather than expanding the text into an unnecessary literature survey.
+
+When uncertain whether an external scientific statement requires citation, the default is to cite and validate the source rather than invoke common knowledge.
+
 ## S2.4 Collaborative practice  `PRACTICE`
 
 *Display number: DIRECTIVE FOUR. Standing requirement.*
@@ -187,7 +200,7 @@ AI participants are requested to:
 6. treat any description of what a method, dataset, or artifact does as a claim requiring verification against the artifact itself, including descriptions already established in the project record. Persistence of a description across sessions is not evidence of its accuracy, and a shared record propagates an inaccurate description with the same fidelity as an accurate one;
 7. re-verify a description at the point where a claim of novelty or a principal result comes to depend on it;
 8. record instances in which a participant confirms an error immediately upon its being raised, since these indicate a description that was inherited rather than checked and a verification that was available and not performed;
-9. on request, and at the point where a result becomes a principal claim or a workstream resumes after a pause, state the premises the current line of work depends on, identify for each whether it has been verified against an artifact or inherited from the project record, and name for each what observation would show it to be wrong.
+9. on request, and at the point where a result becomes a principal claim or a workstream resumes after a pause, state the premises the current line of work depends on, identify for each whether it has been verified against an artifact or inherited from the project record, and name for each what observation would show it to be wrong;
 10. treat every new scientific mechanism, causal explanation, relationship, interpretation, boundary, membership, or analogous proposition as `HYPOTHESIS ONLY: not source-supported` unless and until the User promotes that exact proposition under the evidence-support rule below;
 11. allow hypothesis-only material to guide searches, analyses, model building, or experimental planning, but exclude it from claim titles, signed or accepted edges, mechanism membership, evidence counts, boundary definitions, and analogous evidence-bearing project structures;
 12. use `EVIDENCE SUPPORTED: [specific proposition]` only for the exact proposition for which evidence has been identified and verified. The record states the supporting source or artifact, what the evidence supports, what it does not support, and any material limitations. External-source evidence follows `REFERENCE-VALIDATION`; project-generated evidence is tied to the exact accepted artifact or run;
@@ -556,7 +569,7 @@ The [Notion setup guide](notion-setup.md) provides a practical schema. The proto
 
 ## 3. Adopt the protocol and introduce the participants
 
-Read and adapt the [work contract](protocol.md). Its S8 template records project-specific roles, locations, scope, evidence classes, acceptance criteria, and release requirements. Select a prior-art search coverage declaration and record it. Maintain the search record separately from the claim-specific citation ledger.
+Read and adapt the [work contract](protocol.md). Its S8 template records project-specific roles, locations, scope, evidence classes, acceptance criteria, and release requirements. Select a prior-art search coverage declaration and record it. Maintain the search record separately from the claim-specific citation ledger. Apply the protocol's citation requirements when drafting or reviewing scientific text: outside empirical, theoretical, methodological, mechanistic, interpretive, and quantitative claims are cited; describing a claim as common knowledge or standard is not an exemption. Current-project hypotheses, assumptions, derivations, and results are citation-exempt only to the extent they genuinely originate in the present work.
 
 Supply the Skill through a supported installation mechanism, or provide the complete Markdown instruction edition. Confirm that the assistant can read the entry instructions and companion protocol, guidance, and templates. The User still supplies permissions, project locations, and each transition between participants. Installing instructions does not create service connections.
 
@@ -700,7 +713,7 @@ A second check following exposure can identify defects without constituting inde
 
 ## Review the work itself
 
-State the revision inspected, tests and sources examined, observations supported, uncertainties, and necessary repairs. Criticism concerns the artifact, evidence, assumption, or method. The User resolves competing interpretations and determines acceptance.
+State the revision inspected, tests and sources examined, observations supported, uncertainties, and necessary repairs. Review scientific prose for uncited external claims as well as for incorrect citations. Do not accept "common knowledge," "standard," or "well known" as a citation exemption when a claim is empirical, theoretical, methodological, mechanistic, interpretive, quantitative, or has a plausible alternate convention, scope, interpretation, or domain of validity. Current-project statements are citation-exempt only where they genuinely originate in the present work; external premises remain citable. Novelty and priority statements require the applicable prior-art search in addition to citations. Criticism concerns the artifact, evidence, assumption, or method. The User resolves competing interpretations and determines acceptance.
 
 Review requests and approvals describe current routing and endorsement. The dated review text preserves the event. A substantive revision requires reconsidering earlier approvals, not carrying them forward automatically.
 
@@ -887,23 +900,23 @@ Creative Commons may be contacted at creativecommons.org
   "status": "development",
   "protocol_source": {
     "path": "protocol/01.work-contract.md",
-    "sha256": "61b0ecc5f47a388be1463535c55e362d390f2df91d8d5131a81033598eb2ea85"
+    "sha256": "273f5a7300142309761f798336788493257d23435c74ade66284a223ad253b44"
   },
   "source_files_sha256": {
     "LICENSE.md": "e92080c5a49a1081ed4fbb5c1a72d399a5baf72e384e3dc28371c7c2fb57cf81",
-    "docs/implementation-guide.md": "009e0c253ac492a5a642a18239d93e6826e848793e0a1f9bd4f276aa7a9a397f",
+    "docs/implementation-guide.md": "0c3e88ea1043411029fd30602f12f017c187ec9666422e54d3d5d0fc05c2aa1f",
     "docs/notion-setup.md": "e81063722d0608d08f4e3b2c1f10d59dfcb2157cd63880b1f05eb94b608b2293",
-    "docs/record-and-review.md": "107e568e1b30ab11f9423f4d65b2fddf5eb8108004edb8e75f69b4fae111640a",
-    "protocol/01.work-contract.md": "61b0ecc5f47a388be1463535c55e362d390f2df91d8d5131a81033598eb2ea85",
-    "skills/scuter/SKILL.md": "91a084e9c50562f6895274780d72a9c9004b0e398477a0920c048fa3cd69acea"
+    "docs/record-and-review.md": "16f828d0bfa1366bb9e42bd6f7c1d15944e9009ab5d8580e3b8cc25342003045",
+    "protocol/01.work-contract.md": "273f5a7300142309761f798336788493257d23435c74ade66284a223ad253b44",
+    "skills/scuter/SKILL.md": "8b05d9ad69b6a36f1794fa4173642241e5fbdecf1d7a78966fb17d6db8159f11"
   },
   "members_sha256": {
     "LICENSE.md": "e92080c5a49a1081ed4fbb5c1a72d399a5baf72e384e3dc28371c7c2fb57cf81",
-    "SKILL.md": "91a084e9c50562f6895274780d72a9c9004b0e398477a0920c048fa3cd69acea",
-    "references/implementation-guide.md": "afca88c38870e00414934041063ab20285ed152b7437d6b8771fa3b1cb0a2c6f",
+    "SKILL.md": "8b05d9ad69b6a36f1794fa4173642241e5fbdecf1d7a78966fb17d6db8159f11",
+    "references/implementation-guide.md": "578e978e703434ed2354158b360721170f57f8d8b6ffeefbe59b63ef0d4bdc50",
     "references/notion-setup.md": "e81063722d0608d08f4e3b2c1f10d59dfcb2157cd63880b1f05eb94b608b2293",
-    "references/protocol.md": "61b0ecc5f47a388be1463535c55e362d390f2df91d8d5131a81033598eb2ea85",
-    "references/record-and-review.md": "107e568e1b30ab11f9423f4d65b2fddf5eb8108004edb8e75f69b4fae111640a"
+    "references/protocol.md": "273f5a7300142309761f798336788493257d23435c74ade66284a223ad253b44",
+    "references/record-and-review.md": "16f828d0bfa1366bb9e42bd6f7c1d15944e9009ab5d8580e3b8cc25342003045"
   },
   "document_link_adjustment": "The bundled implementation guide links to references/protocol.md within the Skill."
 }

@@ -20,7 +20,7 @@ The [Notion setup guide](notion-setup.md) provides a practical schema. The proto
 
 ## 3. Adopt the protocol and introduce the participants
 
-Read and adapt the [work contract](protocol.md). Its S8 template records project-specific roles, locations, scope, evidence classes, acceptance criteria, and release requirements. Select a prior-art search coverage declaration and record it. Maintain the search record separately from the claim-specific citation ledger.
+Read and adapt the [work contract](protocol.md). Its S8 template records project-specific roles, locations, scope, evidence classes, acceptance criteria, and release requirements. Select a prior-art search coverage declaration and record it. Maintain the search record separately from the claim-specific citation ledger. Apply the protocol's citation requirements when drafting or reviewing scientific text: outside empirical, theoretical, methodological, mechanistic, interpretive, and quantitative claims are cited; describing a claim as common knowledge or standard is not an exemption. Current-project hypotheses, assumptions, derivations, and results are citation-exempt only to the extent they genuinely originate in the present work.
 
 Supply the Skill through a supported installation mechanism, or provide the complete Markdown instruction edition. Confirm that the assistant can read the entry instructions and companion protocol, guidance, and templates. The User still supplies permissions, project locations, and each transition between participants. Installing instructions does not create service connections.
 

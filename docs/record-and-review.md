@@ -18,7 +18,7 @@ A second check following exposure can identify defects without constituting inde
 
 ## Review the work itself
 
-State the revision inspected, tests and sources examined, observations supported, uncertainties, and necessary repairs. Criticism concerns the artifact, evidence, assumption, or method. The User resolves competing interpretations and determines acceptance.
+State the revision inspected, tests and sources examined, observations supported, uncertainties, and necessary repairs. Review scientific prose for uncited external claims as well as for incorrect citations. Do not accept "common knowledge," "standard," or "well known" as a citation exemption when a claim is empirical, theoretical, methodological, mechanistic, interpretive, quantitative, or has a plausible alternate convention, scope, interpretation, or domain of validity. Current-project statements are citation-exempt only where they genuinely originate in the present work; external premises remain citable. Novelty and priority statements require the applicable prior-art search in addition to citations. Criticism concerns the artifact, evidence, assumption, or method. The User resolves competing interpretations and determines acceptance.
 
 Review requests and approvals describe current routing and endorsement. The dated review text preserves the event. A substantive revision requires reconsidering earlier approvals, not carrying them forward automatically.
 

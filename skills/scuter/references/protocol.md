@@ -93,6 +93,19 @@ Supporting references are admitted with the following protocol:
 5. Each reviewer records approval, clarification or objection to a source citation. The User determines whether the source citation is accepted into the project record.
 6. An unresolved, broken, mismatched, inaccessible, or unvalidated reference blocks merge and release.
 
+### Citation requirements
+
+The following rules determine when a scientific statement requires an external citation. Describing a statement as "common knowledge," "standard," "well known," or similar does not by itself exempt it from citation.
+
+1. **Current-project hypothesis, assumption, derivation, or result.** An external citation is not required when the statement genuinely originates in the current project. It is clearly identified as a hypothesis, assumption, derivation, observation, or result of the present work and linked to the relevant project evidence or derivation. Any external premise on which it depends remains subject to citation.
+2. **Pure mathematical identity or explicit definition.** A citation is generally not required for an identity derived directly from mathematics or for a definition introduced explicitly by the present work. A named theorem, established method, conventional definition, or result with an identifiable scholarly origin is cited when that origin is relevant.
+3. **Claim derived from outside work.** Any empirical, theoretical, methodological, mechanistic, or interpretive claim originating outside the current project is cited to an appropriate source.
+4. **Standard scientific fact.** A scientific statement is not exempt from citation merely because it is described as standard or commonly known. If there is any plausible alternate convention, scope, interpretation, population, experimental context, or domain of validity, an appropriate source is cited.
+5. **Quantitative statement.** A numerical value, range, rate, threshold, effect size, prevalence, parameter, or other quantitative scientific statement is cited unless it is directly calculated, measured, or derived in the current work. Internally derived quantities are linked to the corresponding method, data, calculation, or result.
+6. **Novelty or priority statement.** A claim that a method, result, observation, interpretation, or resource is novel, first, unique, or previously unreported requires citation to the closest relevant prior work and the applicable recorded search under `PRIOR-ART-LINEAGE`. Citations alone do not establish absence of prior art. Cite only what is needed to support the specific comparison or priority statement rather than expanding the text into an unnecessary literature survey.
+
+When uncertain whether an external scientific statement requires citation, the default is to cite and validate the source rather than invoke common knowledge.
+
 ## S2.4 Collaborative practice  `PRACTICE`
 
 *Display number: DIRECTIVE FOUR. Standing requirement.*
@@ -109,7 +122,7 @@ AI participants are requested to:
 6. treat any description of what a method, dataset, or artifact does as a claim requiring verification against the artifact itself, including descriptions already established in the project record. Persistence of a description across sessions is not evidence of its accuracy, and a shared record propagates an inaccurate description with the same fidelity as an accurate one;
 7. re-verify a description at the point where a claim of novelty or a principal result comes to depend on it;
 8. record instances in which a participant confirms an error immediately upon its being raised, since these indicate a description that was inherited rather than checked and a verification that was available and not performed;
-9. on request, and at the point where a result becomes a principal claim or a workstream resumes after a pause, state the premises the current line of work depends on, identify for each whether it has been verified against an artifact or inherited from the project record, and name for each what observation would show it to be wrong.
+9. on request, and at the point where a result becomes a principal claim or a workstream resumes after a pause, state the premises the current line of work depends on, identify for each whether it has been verified against an artifact or inherited from the project record, and name for each what observation would show it to be wrong;
 10. treat every new scientific mechanism, causal explanation, relationship, interpretation, boundary, membership, or analogous proposition as `HYPOTHESIS ONLY: not source-supported` unless and until the User promotes that exact proposition under the evidence-support rule below;
 11. allow hypothesis-only material to guide searches, analyses, model building, or experimental planning, but exclude it from claim titles, signed or accepted edges, mechanism membership, evidence counts, boundary definitions, and analogous evidence-bearing project structures;
 12. use `EVIDENCE SUPPORTED: [specific proposition]` only for the exact proposition for which evidence has been identified and verified. The record states the supporting source or artifact, what the evidence supports, what it does not support, and any material limitations. External-source evidence follows `REFERENCE-VALIDATION`; project-generated evidence is tied to the exact accepted artifact or run;
