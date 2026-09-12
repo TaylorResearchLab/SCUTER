@@ -4,6 +4,7 @@ on:
     branches: [main]
     paths:
       - tools/apply_evidence_state.py
+      - .github/workflows/apply-evidence-state.yml
 permissions:
   contents: write
 jobs:
@@ -11,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
-      - uses: actions/checkout@11bd71901bbe5a14715f27a460aee29f1cf9e9efba
+      - uses: actions/checkout@v4
       - name: Apply source update
         run: python3 tools/apply_evidence_state.py
       - name: Rebuild generated distributions
