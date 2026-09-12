@@ -28,7 +28,7 @@ Read the [complete protocol and templates](references/protocol.md) when adopting
 
 1. **USER-AUTHORITY.** The User directs scope, methods, scientific questions, access, acceptance, and release. AI participants propose, implement, review, challenge, and repair. No participant accepts its own result into governing project state. Report material concerns directly to the User.
 2. **PRIOR-ART-LINEAGE.** Establish the User's coverage declaration: FULL, CLAIMS, CITATION, or a recorded custom scope. Conduct and record proposition-specific searches required by that declaration. Preserve null searches and candidate dispositions. A different participant establishes lineage for the introducing participant's claims, as specified by the protocol. Do not infer novelty from an unperformed search.
-3. **REFERENCE-VALIDATION.** **All citations must be sourced from the complete primary text of the cited work.** Memory may suggest a candidate source but never establishes what it says. Abstracts, search snippets, generated summaries, secondary descriptions, citation chains, and bibliographic metadata may help locate or screen a source but cannot validate it or support a project claim. Inspect the complete paper or other complete primary source needed to evaluate the cited claim. If the complete primary text is unavailable, stop validation and ask the User to provide the text or access to it; obtaining the source material needed for review is the User's responsibility as project leader. Until then, the reference remains Provisional, inaccessible, or unverified and cannot support a project claim. Enter a proposed reference as Provisional. Check an authoritative source for bibliographic identity and support for the assigned claim. Obtain another participant's check and record uncertainties. The User determines acceptance. A resolved identifier or successful build alone is not validation. Cite empirical, theoretical, methodological, mechanistic, interpretive, and externally sourced quantitative scientific claims. Do not exempt a claim merely because it is described as common knowledge, standard, or well known. Current-project hypotheses, assumptions, derivations, and results need no external citation only for content that genuinely originates in the present work; external premises still require citation. Novelty or priority statements also require the applicable `PRIOR-ART-LINEAGE` search. When uncertain whether an external scientific statement requires citation, cite and validate rather than invoke common knowledge.
+3. **REFERENCE-VALIDATION.** **All citations must be sourced from the complete primary text of the cited work.** Memory may suggest a candidate source but never establishes what it says. Abstracts, search snippets, generated summaries, secondary descriptions, citation chains, and bibliographic metadata may help locate or screen a source but cannot validate it or support a project claim. Inspect the complete paper or other complete primary source needed to evaluate the cited claim. If the complete primary text is unavailable, stop validation and ask the User to provide the text or access to it; obtaining the source material needed for review is the User's responsibility as project leader. Until then, the reference remains Provisional, inaccessible, or unverified and cannot support a project claim. Enter a proposed reference as Provisional. Check an authoritative source for bibliographic identity and support for the assigned claim. Obtain another participant's check and record uncertainties. The User determines acceptance. A resolved identifier or successful build alone is not validation. Cite empirical, theoretical, methodological, mechanistic, interpretive, and externally sourced quantitative scientific claims. Do not exempt a claim merely because it is described as common knowledge, standard, or well known. Current-project hypotheses, assumptions, derivations, and results need no external citation only for content that genuinely originates in the present work; external premises still require citation. Novelty or priority statements also require the applicable `PRIOR-ART-LINEAGE` search. When uncertain whether an external scientific statement requires citation, cite and validate rather than invoke common knowledge. Record validation in the existing Citation Validation Ledger: one source record per primary work, with separate proposition-specific claim-evidence mappings containing the exact claim, evidence locator, concise support note, caveat, checks, and User disposition. Source-level access or support for one proposition never validates other claims citing the same source.
 4. **PRACTICE.** Be constructive and substantive. Check descriptions against actual artifacts before relying on them. Distinguish inherited assumptions from verified evidence. State errors and consequences directly. When a result becomes a principal claim or work resumes, identify its premises and what observations would falsify them. Default new scientific propositions to `HYPOTHESIS ONLY: not source-supported`; promotion requires claim-specific evidence and User acceptance.
 5. **DURABLE-RECORD.** Record material assignments, decisions, work, reviews, corrections, searches, run evidence, artifact locations, and next actions when they occur. Read back every shared-record or repository write, checking location and retained properties separately. Record session identity and exposure at the time of action. Preserve relevant superseded history.
 
@@ -170,14 +170,26 @@ For a paper, inspect the complete paper rather than relying on the abstract. For
 
 If the acting participant cannot access the complete primary text, citation validation stops. The participant asks the User to provide the complete primary text or access to it. Obtaining and supplying the source material needed for review is the User's responsibility as project leader. Until the complete primary text is available and inspected, the reference remains Provisional, inaccessible, or unverified and cannot be used as evidentiary support for a project claim.
 
+### Citation Validation Ledger
+
+The existing Citation Validation Ledger is **source-centric at the top level and proposition-centric at the evidence level**. Use one source record per primary work. The source record identifies the canonical citation key or identifier, a concise human-readable source identity such as title and year, the exact complete-primary-text location that was inspected, complete-text access and inspection state, who inspected it, and the inspection date. A DOI or bibliographic URL identifies a work; it is not a substitute for recording the actual full-text artifact or location that was inspected.
+
+Within each source record, maintain a **claim-evidence mapping table** with one mapping for each exact project or manuscript proposition supported by that source. Each mapping records the claim ID, exact proposition, project or manuscript location, precise evidence locator such as page, section, equation, table, figure, or supplementary item, a concise paraphrase of what the primary source establishes, any scope restriction or caveat, validator and date, second-participant check, User disposition, and mapping status.
+
+Recommended mapping states are `Provisional`, `Validated support`, `Supports narrower formulation`, `Does not support`, and `Needs review`. `Validated support` applies only after the complete primary text has been inspected, the required second check has been recorded, and the User accepts the source as sufficient support for that exact proposition.
+
+**Validation is not a source-wide property.** Obtaining or inspecting the complete text does not validate any claim by itself, and validating one source-claim mapping does not validate other claims that cite the same source. If one source supports several propositions, retain one source record and multiple claim-evidence mappings within it. If the evidence supports only a narrower proposition, record the narrower supported formulation and do not promote the broader claim.
+
+Record precise evidence locators and short paraphrases rather than reproducing large blocks of source text unless quotation serves a specific scientific or audit purpose. Routine citation-validation work belongs in the Citation Validation Ledger rather than the Collaboration Log. The Collaboration Log records material citation events, such as completion of validation for a manuscript block, discovery of a consequential citation error, a change in scientific interpretation resulting from source review, an unresolved access problem that affects release, or a User decision that changes accepted project state.
+
 Supporting references are admitted with the following protocol:
 
-1. A participant proposes the resource by creating an entry in the citation ledger, marked `Provisional`.
-2. The proposing participant opens a primary publication or authoritative source record and confirms that the resource exists, recording title, authors or responsible organization, publication year or release date, persistent identifier or stable URL, date accessed, and relevant source location.
-3. The participant indicates whether the cited source's content can sufficiently support the specific assertion or claim. Bibliographic identity is not sufficient.
-4. A second-participant check covers both bibliographic identity and claim-source correspondence. Disagreements, corrections, and uncertainties are recorded. This check is designated independent only where exposure was prospectively controlled and recorded; otherwise it is recorded as a second check following exposure.
-5. Each reviewer records approval, clarification or objection to a source citation. The User determines whether the source citation is accepted into the project record.
-6. An unresolved, broken, mismatched, inaccessible, or unvalidated reference blocks merge and release.
+1. A participant proposes the resource by creating or updating its source record in the Citation Validation Ledger. Before complete-text inspection, the source and any proposed claim mappings remain `Provisional` or `Needs full text` as appropriate.
+2. The acting participant obtains and inspects the complete primary text, confirms source identity, and records the canonical citation key or identifier, concise source identity, exact complete-text location inspected, inspector, and inspection date.
+3. For each manuscript or project proposition that will cite the source, the participant creates or updates a separate claim-evidence mapping with the exact proposition, project location, evidence locator, evidence note, and scope or caveat. Bibliographic identity or source-level inspection alone is not claim validation.
+4. A second-participant check evaluates the complete primary text and the specific claim-evidence mapping. Disagreements, corrections, narrower support, and uncertainties are recorded. This check is designated independent only where exposure was prospectively controlled and recorded; otherwise it is recorded as a second check following exposure.
+5. The User determines whether the evidence is sufficient for each exact source-claim mapping. Only an accepted mapping may receive `Validated support`; another claim citing the same source remains separately unresolved until its own mapping is validated.
+6. An unresolved, broken, mismatched, inaccessible, or unvalidated source-claim mapping blocks use of that citation for the affected claim and blocks merge or release where the claim is required.
 
 ### Citation requirements
 
@@ -227,7 +239,7 @@ A project maintains the following artifacts. Each is established before work beg
 | Project Overview | Background of the research and what governs it: the accepted scientific question, current assumptions, accepted commit, authoritative configuration, current outputs, unresolved limitations, and prior art | Notion page |
 | Numbered notebooks | Extended records of methods, analyses, derivations, figures, and project-specific reasoning that do not fit one log entry | Notion pages |
 | Search record | Propositions searched, terms, databases, dates, candidate dispositions, and searches that returned nothing | Notion database, or a delimited file in the code repository |
-| Citation ledger | One canonical identifier per work, the statement each reference supports, validation status, who checked and when, and dispositions of candidates not retained | Structured database or a delimited file in the manuscript repository |
+| Citation Validation Ledger | One source record per primary work with complete-primary-text location and inspection provenance; within each source record, proposition-specific claim-evidence mappings with locators, support notes, caveats, review, and User disposition | Structured database with source pages or an equivalently structured file in the manuscript repository |
 | Code repository | Code, tests, configuration, environment specification | GitHub |
 | Manuscript repository | Manuscript source, figures, build configuration, build outputs | GitHub, with a GitHub Actions-driven automated build |
 | Protected environment | Private data and authoritative execution | Institutional computing environment under User control |
@@ -235,13 +247,16 @@ A project maintains the following artifacts. Each is established before work beg
 
 The code and manuscript repositories may be the same repository or separate, provided the manuscript build does not depend on unversioned inputs.
 
-The citation ledger is a project record and is not a bibliography. Build systems that resolve persistent identifiers retrieve bibliographic metadata automatically, so the ledger does not store what such a system supplies. It stores what no build system can know: which statement each reference supports, whether the source was checked against that statement, by whom, on what date, and which candidates were considered and not retained. Identifiers embedded in manuscript source are pointers to works; they are not a record of validation.
+The Citation Validation Ledger is a project record and is not a bibliography. It is source-centric at the top level and proposition-centric at the evidence level. Build systems may resolve bibliographic metadata automatically, but they cannot record which complete text was actually inspected, where the relevant evidence occurs, which exact proposition it supports, the limits of that support, who checked the mapping, or whether the User accepted it.
 
-Three properties follow.
+Six properties follow.
 
-1. **One canonical identifier per work.** Where a build system treats identifiers of different types as distinct references, citing the same work through more than one produces duplicate entries. The ledger fixes a single identifier per work, and the manuscript uses that one.
-2. **No duplicated metadata.** Titles, authors, and journals are not stored in the ledger where the build retrieves them, since a second copy diverges from the first.
-3. **A path for works without identifiers.** Websites, personal communications, unindexed reports, and similar sources cannot be resolved automatically and require metadata supplied by hand in whatever format the build accepts. The ledger records these as such, so that the set requiring manual metadata is known rather than discovered at build time.
+1. **One source record per primary work.** Fix one canonical citation key or persistent identifier for the work. When one source supports multiple project propositions, retain one source record and multiple claim-evidence mappings rather than duplicating the source across ledger rows.
+2. **Minimal human-readable identity, not a parallel bibliography.** Record enough identity to recognize the source, such as title and year, while avoiding a redundant full bibliographic record when the manuscript build can resolve it. Works without resolvable identifiers receive the metadata needed for the build.
+3. **Record the complete text actually inspected.** A DOI or landing page identifies a source but does not prove complete-text access. Record the URL, uploaded PDF, repository file, or other exact full-text artifact used for validation, together with inspection provenance.
+4. **Validation belongs to the source-claim mapping.** Each mapping identifies the exact project or manuscript proposition, evidence locator, concise evidence note, scope or caveat, validator, second check, and User disposition. A source-level access or inspection field must never imply that all claims attached to that source are validated.
+5. **Prefer locators and paraphrases to copied literature.** Preserve precise page, section, equation, table, figure, or supplement locations plus a short account of what the source establishes. Retain larger quotations only when they serve a specific scientific or audit need.
+6. **Keep citation operations separate from project-event logging.** Routine source inspection and claim mapping occur in the Citation Validation Ledger. Record a Collaboration Log entry only when citation work constitutes a material project event, such as completion of a manuscript block, discovery of a consequential error, a change in interpretation, or a User decision.
 
 For this directive, the unit of work is the material action; the output is a record in the Collaboration Log. Material actions comprise decisions, reviews, run results, corrections, supersessions, file links, next actions, concerns stated under `USER-AUTHORITY`, and a User decision to proceed without a satisfied release requirement.
 
@@ -581,6 +596,10 @@ Read and adapt the [work contract](protocol.md). Its S8 template records project
 
 All citations are sourced from the complete primary text of the cited work. Memory may identify a candidate but is not evidence. Abstracts, search snippets, generated summaries, another source's paraphrase, citation chains, and bibliographic metadata may be used for discovery or screening but not for citation validation or claim support. Inspect the complete paper or other complete primary source needed to evaluate the cited claim. If the complete primary text cannot be accessed, stop validation and ask the User to provide the text or access to it. Obtaining the source material needed for review is the User's responsibility as project leader. Until supplied and inspected, the reference remains Provisional, inaccessible, or unverified and cannot support a project claim.
 
+Maintain one source record per primary work in the existing Citation Validation Ledger. Record source identity, the exact complete-text artifact or location inspected, access and inspection state, inspector, and date at the source level. Inside that source record, maintain one claim-evidence mapping for each exact project or manuscript proposition that cites the work. Each mapping records the exact proposition, manuscript or project location, evidence locator, concise support note, scope or caveat, validator and date, second check, User disposition, and mapping status. A paper is never "validated" in the abstract: validation applies to a specific source-claim mapping. One validated mapping does not confer validation on another claim citing the same paper.
+
+Routine mapping work stays in the Citation Validation Ledger rather than the Collaboration Log. Use the Collaboration Log for material citation events such as completion of a manuscript block, discovery of a consequential citation error, a change in interpretation, or a User decision.
+
 Supply the Skill through a supported installation mechanism, or provide the complete Markdown instruction edition. Confirm that the assistant can read the entry instructions and companion protocol, guidance, and templates. The User still supplies permissions, project locations, and each transition between participants. Installing instructions does not create service connections.
 
 At the start of a session, the User supplies its assignment and a distinct project-chat label. The Agent identifies the governing protocol, current objective, available tools, and missing resources, and registers that label once in the log. It reuses the identifier in Agent instance ID for its entries. The User may name the review fields for the participating assistants; record the mapping. Displayed provider/model identity is separate from the chat label. Do not infer unexposed model or connector versions.
@@ -642,7 +661,7 @@ A build result is evidence about that build only. Package acceptance is evidence
 
 Confirm the intended workspace and parent page with the User before creating records. Use the actual tool schemas available to the current session; connector names and accepted parameters can vary.
 
-Create a Project Overview, one Collaboration Log, a prior-art search record, and a citation ledger. Add numbered notebooks for longer methods and analyses as needed. The Overview states what currently governs. The log preserves material actions, evidence, decisions, and next steps. The citation ledger records whether the complete primary text was actually inspected for each reference. Abstract-only, snippet-only, memory-based, secondary-source, or inaccessible candidates are not validated citations. If complete primary text is unavailable, the acting participant asks the User to provide the text or access to it before validation continues.
+Create a Project Overview, one Collaboration Log, a prior-art search record, and one Citation Validation Ledger. Add numbered notebooks for longer methods and analyses as needed. The Overview states what currently governs. The log preserves material actions, evidence, decisions, and next steps. The Citation Validation Ledger is source-centric at the top level and proposition-centric inside each source record. It records which complete primary text was actually inspected and preserves a separate claim-evidence mapping for every exact proposition supported by that source. Abstract-only, snippet-only, memory-based, secondary-source, or inaccessible candidates are not validated citations. If complete primary text is unavailable, the acting participant asks the User to provide the text or access to it before validation continues.
 
 Evidence-state labels are proposition-specific. When an entry contains more than one scientific proposition, do not use one row-level checkbox or status to imply that all are supported. Label the exact proposition in the entry body or maintain separate claim records: `HYPOTHESIS ONLY: not source-supported` is the default, and `EVIDENCE SUPPORTED: [specific proposition]` is used only after the User accepts the evidence for that proposition.
 
@@ -672,6 +691,36 @@ Evidence-state labels are proposition-specific. When an entry contains more than
 Grouped names represent separate fields. The table describes the 25-field core; the protocol's S6 and S8 templates supply examples. Displayed provider/model identity and review exposure may use separate fields or dated entry content. The User may adapt the schema and participant labels to the project. In the example implementation, Agent A and Agent B fields were named for GPT and Claude; record that mapping without equating a provider label with a fixed lead or reviewer role. The public Repository and Commit SHA fields correspond to GitHub repo and GitHub commit SHA in that implementation.
 
 Create **Created time** and **Last edited time** as native Notion properties. Do not populate them manually. Date records the stated time of the work; a page timestamp is not evidence of when an analysis executed.
+
+## Citation Validation Ledger
+
+Use **one database record per primary source**. Do not create duplicate source rows merely because one paper supports several manuscript claims. The source-level database properties describe identity, access, and inspection provenance rather than scientific support.
+
+Suggested source-level properties:
+
+| Field | Suggested type | Purpose |
+| --- | --- | --- |
+| Citation key | Title | Stable project key for the source |
+| Canonical identifier | Text or URL | DOI, arXiv identifier, stable URL, or other canonical identifier |
+| Primary source | Text | Concise human-readable identity, usually title and year |
+| Complete primary text | Files, URL, or text | Exact uploaded PDF, full-text URL, repository path, or other artifact actually inspected |
+| Complete text status | Select | `Obtained`, `Needs full text`, or `Not yet checked` |
+| Complete text inspected | Checkbox | Whether the complete primary text has actually been inspected |
+| Inspected by | Text or person | Participant that inspected the complete text |
+| Inspected date | Date | Date of complete-text inspection |
+| Source notes | Text | Source-level access or identity notes; not a claim-wide validation field |
+
+**Do not use a source-level `Validated` field.** Complete-text access and inspection are source-level facts. Scientific support is validated only for an exact source-claim mapping.
+
+Inside each source record's page, maintain a claim-evidence mapping table. A useful structure is:
+
+| Claim ID | Exact project/manuscript proposition | Project/manuscript location | Evidence location | Evidence note | Scope/caveat | Validator/date | Second check | User acceptance | Mapping status |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| `INTRO-03` | Exact proposition being cited | `Main Intro P2` | p. 7, Fig. 2 | Short paraphrase of what the complete primary text establishes | Any narrower scope or limitation | participant + date | reviewer + disposition | accepted / not accepted / pending | `Validated support`, `Supports narrower formulation`, `Does not support`, `Needs review`, or `Provisional` |
+
+`Validated support` is claim-specific. It is used only after complete-primary-text inspection, the required second check, and User acceptance for that exact proposition. If the same source is cited for another proposition, add another mapping row and validate it separately. If the evidence supports only a narrower formulation, record the narrower wording rather than validating the broader claim.
+
+Prefer precise evidence locators plus concise paraphrases over large copied passages. Routine citation review belongs in this ledger. Add a Collaboration Log entry only when the citation work is itself a material project event, such as finishing validation of a manuscript block, discovering a consequential citation error, changing scientific interpretation, or recording a User decision.
 
 ## Reference posts
 
@@ -724,6 +773,10 @@ A second check following exposure can identify defects without constituting inde
 ## Review the work itself
 
 State the revision inspected, tests and sources examined, observations supported, uncertainties, and necessary repairs. A reviewer approves claim-source correspondence only after inspecting the complete primary text of the cited work. Model memory, abstracts, search snippets, generated summaries, secondary descriptions, citation chains, and bibliographic metadata may assist discovery or screening but cannot validate a citation or support a project claim. If the complete primary text is unavailable, the reviewer or acting participant asks the User to provide the text or access to it; obtaining the source material needed for review is the User's responsibility as project leader. Until supplied and inspected, the reference remains Provisional, inaccessible, or unverified. Review scientific prose for uncited external claims as well as for incorrect citations. Do not accept "common knowledge," "standard," or "well known" as a citation exemption when a claim is empirical, theoretical, methodological, mechanistic, interpretive, quantitative, or has a plausible alternate convention, scope, interpretation, or domain of validity. Current-project statements are citation-exempt only where they genuinely originate in the present work; external premises remain citable. Novelty and priority statements require the applicable prior-art search in addition to citations. Criticism concerns the artifact, evidence, assumption, or method. The User resolves competing interpretations and determines acceptance.
+
+Validate citations at the **source-claim mapping** level. The Citation Validation Ledger keeps one source record per primary work, but every exact manuscript or project proposition has its own evidence locator, support note, scope or caveat, checks, and User disposition. Do not infer support for one proposition from a different validated mapping to the same paper, and do not treat complete-text access or inspection as source-wide scientific validation. Reviewers should be able to recover the exact supporting passage or element from the recorded locator without reconstructing the claim from memory.
+
+Routine claim-evidence mapping updates remain in the Citation Validation Ledger. The Collaboration Log records citation work only when it becomes a material project event.
 
 Review requests and approvals describe current routing and endorsement. The dated review text preserves the event. A substantive revision requires reconsidering earlier approvals, not carrying them forward automatically.
 
@@ -910,23 +963,23 @@ Creative Commons may be contacted at creativecommons.org
   "status": "development",
   "protocol_source": {
     "path": "protocol/01.work-contract.md",
-    "sha256": "38cd6ee79a2e3f5bbbfa010a2898a0b7df5304050782fad49e1d454aa930f857"
+    "sha256": "515497d970a3a7da52fec1e288837d9812c03c3a8bff9168bdf42b99ba3d54de"
   },
   "source_files_sha256": {
     "LICENSE.md": "e92080c5a49a1081ed4fbb5c1a72d399a5baf72e384e3dc28371c7c2fb57cf81",
-    "docs/implementation-guide.md": "e0af99475b4cabe954afbc29339a372728fd3cab34cebcb00999b426961cca52",
-    "docs/notion-setup.md": "6808fc278e3f86db98ecdaef141dd43fd6faa05b2f698bae7293780eba04ac5e",
-    "docs/record-and-review.md": "649f457c7dfdadb230b0f60d3d42d23d8262e6703521ca13ac113f9714b16b5d",
-    "protocol/01.work-contract.md": "38cd6ee79a2e3f5bbbfa010a2898a0b7df5304050782fad49e1d454aa930f857",
-    "skills/scuter/SKILL.md": "0deb39b2fecdc8a70b46715ac5477c4280875cba54767defd2d56b800d52956b"
+    "docs/implementation-guide.md": "754fa3db43ba8f336422f7c77c56b9231844a553d478951e1d423404c4ba47be",
+    "docs/notion-setup.md": "9fe5a4a2d2ea538ba3bd5ae2a2f0d7a140fac635503dae206d7258879311ca6d",
+    "docs/record-and-review.md": "66a5967d2ef00587c96aeee33f4aba448bab4bb9f06861932ab499ce67841b81",
+    "protocol/01.work-contract.md": "515497d970a3a7da52fec1e288837d9812c03c3a8bff9168bdf42b99ba3d54de",
+    "skills/scuter/SKILL.md": "06eb39474d2117aeaa90c3cdc8f986b913e947641915ef92e6f9f40420d00b58"
   },
   "members_sha256": {
     "LICENSE.md": "e92080c5a49a1081ed4fbb5c1a72d399a5baf72e384e3dc28371c7c2fb57cf81",
-    "SKILL.md": "0deb39b2fecdc8a70b46715ac5477c4280875cba54767defd2d56b800d52956b",
-    "references/implementation-guide.md": "b517b325fbe7326e086b1355ce55520b38439ff5842b63f9ab711106dd8607bf",
-    "references/notion-setup.md": "6808fc278e3f86db98ecdaef141dd43fd6faa05b2f698bae7293780eba04ac5e",
-    "references/protocol.md": "38cd6ee79a2e3f5bbbfa010a2898a0b7df5304050782fad49e1d454aa930f857",
-    "references/record-and-review.md": "649f457c7dfdadb230b0f60d3d42d23d8262e6703521ca13ac113f9714b16b5d"
+    "SKILL.md": "06eb39474d2117aeaa90c3cdc8f986b913e947641915ef92e6f9f40420d00b58",
+    "references/implementation-guide.md": "f4c6c319360d9fb2ea436f15e56303b44f709e246147484140c03c9843064624",
+    "references/notion-setup.md": "9fe5a4a2d2ea538ba3bd5ae2a2f0d7a140fac635503dae206d7258879311ca6d",
+    "references/protocol.md": "515497d970a3a7da52fec1e288837d9812c03c3a8bff9168bdf42b99ba3d54de",
+    "references/record-and-review.md": "66a5967d2ef00587c96aeee33f4aba448bab4bb9f06861932ab499ce67841b81"
   },
   "document_link_adjustment": "The bundled implementation guide links to references/protocol.md within the Skill."
 }

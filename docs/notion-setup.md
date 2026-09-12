@@ -2,7 +2,7 @@
 
 Confirm the intended workspace and parent page with the User before creating records. Use the actual tool schemas available to the current session; connector names and accepted parameters can vary.
 
-Create a Project Overview, one Collaboration Log, a prior-art search record, and a citation ledger. Add numbered notebooks for longer methods and analyses as needed. The Overview states what currently governs. The log preserves material actions, evidence, decisions, and next steps. The citation ledger records whether the complete primary text was actually inspected for each reference. Abstract-only, snippet-only, memory-based, secondary-source, or inaccessible candidates are not validated citations. If complete primary text is unavailable, the acting participant asks the User to provide the text or access to it before validation continues.
+Create a Project Overview, one Collaboration Log, a prior-art search record, and one Citation Validation Ledger. Add numbered notebooks for longer methods and analyses as needed. The Overview states what currently governs. The log preserves material actions, evidence, decisions, and next steps. The Citation Validation Ledger is source-centric at the top level and proposition-centric inside each source record. It records which complete primary text was actually inspected and preserves a separate claim-evidence mapping for every exact proposition supported by that source. Abstract-only, snippet-only, memory-based, secondary-source, or inaccessible candidates are not validated citations. If complete primary text is unavailable, the acting participant asks the User to provide the text or access to it before validation continues.
 
 Evidence-state labels are proposition-specific. When an entry contains more than one scientific proposition, do not use one row-level checkbox or status to imply that all are supported. Label the exact proposition in the entry body or maintain separate claim records: `HYPOTHESIS ONLY: not source-supported` is the default, and `EVIDENCE SUPPORTED: [specific proposition]` is used only after the User accepts the evidence for that proposition.
 
@@ -32,6 +32,36 @@ Evidence-state labels are proposition-specific. When an entry contains more than
 Grouped names represent separate fields. The table describes the 25-field core; the protocol's S6 and S8 templates supply examples. Displayed provider/model identity and review exposure may use separate fields or dated entry content. The User may adapt the schema and participant labels to the project. In the example implementation, Agent A and Agent B fields were named for GPT and Claude; record that mapping without equating a provider label with a fixed lead or reviewer role. The public Repository and Commit SHA fields correspond to GitHub repo and GitHub commit SHA in that implementation.
 
 Create **Created time** and **Last edited time** as native Notion properties. Do not populate them manually. Date records the stated time of the work; a page timestamp is not evidence of when an analysis executed.
+
+## Citation Validation Ledger
+
+Use **one database record per primary source**. Do not create duplicate source rows merely because one paper supports several manuscript claims. The source-level database properties describe identity, access, and inspection provenance rather than scientific support.
+
+Suggested source-level properties:
+
+| Field | Suggested type | Purpose |
+| --- | --- | --- |
+| Citation key | Title | Stable project key for the source |
+| Canonical identifier | Text or URL | DOI, arXiv identifier, stable URL, or other canonical identifier |
+| Primary source | Text | Concise human-readable identity, usually title and year |
+| Complete primary text | Files, URL, or text | Exact uploaded PDF, full-text URL, repository path, or other artifact actually inspected |
+| Complete text status | Select | `Obtained`, `Needs full text`, or `Not yet checked` |
+| Complete text inspected | Checkbox | Whether the complete primary text has actually been inspected |
+| Inspected by | Text or person | Participant that inspected the complete text |
+| Inspected date | Date | Date of complete-text inspection |
+| Source notes | Text | Source-level access or identity notes; not a claim-wide validation field |
+
+**Do not use a source-level `Validated` field.** Complete-text access and inspection are source-level facts. Scientific support is validated only for an exact source-claim mapping.
+
+Inside each source record's page, maintain a claim-evidence mapping table. A useful structure is:
+
+| Claim ID | Exact project/manuscript proposition | Project/manuscript location | Evidence location | Evidence note | Scope/caveat | Validator/date | Second check | User acceptance | Mapping status |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| `INTRO-03` | Exact proposition being cited | `Main Intro P2` | p. 7, Fig. 2 | Short paraphrase of what the complete primary text establishes | Any narrower scope or limitation | participant + date | reviewer + disposition | accepted / not accepted / pending | `Validated support`, `Supports narrower formulation`, `Does not support`, `Needs review`, or `Provisional` |
+
+`Validated support` is claim-specific. It is used only after complete-primary-text inspection, the required second check, and User acceptance for that exact proposition. If the same source is cited for another proposition, add another mapping row and validate it separately. If the evidence supports only a narrower formulation, record the narrower wording rather than validating the broader claim.
+
+Prefer precise evidence locators plus concise paraphrases over large copied passages. Routine citation review belongs in this ledger. Add a Collaboration Log entry only when the citation work is itself a material project event, such as finishing validation of a manuscript block, discovering a consequential citation error, changing scientific interpretation, or recording a User decision.
 
 ## Reference posts
 
