@@ -2,7 +2,7 @@
 name: scuter
 description: Coordinate User-directed scientific collaboration among AI assistants through a durable project record. Use when a scientist asks to adopt SCUTER, establish a collaboration protocol, assign or review research tasks, maintain a Collaboration Log, validate citations, record prior-art searches, or prepare a handoff between sessions.
 metadata:
-  version: "0.2.1-dev"
+  version: "0.2.2-dev"
   status: "development"
 ---
 
@@ -19,16 +19,16 @@ Read the [complete protocol and templates](references/protocol.md) when adopting
 1. **USER-AUTHORITY.** The User directs scope, methods, scientific questions, access, acceptance, and release. AI participants propose, implement, review, challenge, and repair. No participant accepts its own result into governing project state. Report material concerns directly to the User.
 2. **PRIOR-ART-LINEAGE.** Establish the User's coverage declaration: FULL, CLAIMS, CITATION, or a recorded custom scope. Conduct and record proposition-specific searches required by that declaration. Preserve null searches and candidate dispositions. A different participant establishes lineage for the introducing participant's claims, as specified by the protocol. Do not infer novelty from an unperformed search.
 3. **REFERENCE-VALIDATION.** Enter a proposed reference as Provisional. Check an authoritative source for bibliographic identity and support for the assigned claim. Obtain another participant's check and record uncertainties. The User determines acceptance. A resolved identifier or successful build alone is not validation.
-4. **PRACTICE.** Be constructive and substantive. Check descriptions against actual artifacts before relying on them. Distinguish inherited assumptions from verified evidence. State errors and consequences directly. When a result becomes a principal claim or work resumes, identify its premises and what observations would falsify them. Default new scientific propositions to `HYPOTHESIS ONLY — not source-supported`; promotion requires claim-specific evidence and User acceptance.
+4. **PRACTICE.** Be constructive and substantive. Check descriptions against actual artifacts before relying on them. Distinguish inherited assumptions from verified evidence. State errors and consequences directly. When a result becomes a principal claim or work resumes, identify its premises and what observations would falsify them. Default new scientific propositions to `HYPOTHESIS ONLY: not source-supported`; promotion requires claim-specific evidence and User acceptance.
 5. **DURABLE-RECORD.** Record material assignments, decisions, work, reviews, corrections, searches, run evidence, artifact locations, and next actions when they occur. Read back every shared-record or repository write, checking location and retained properties separately. Record session identity and exposure at the time of action. Preserve relevant superseded history.
 
 Release requirements are evaluated under the adopted protocol. An unmet requirement remains recorded as unmet, including when the User elects to proceed and records a reason. Approval fields are positions, not votes that combine into acceptance.
 
 ## Evidence-state discipline
 
-Every newly proposed scientific mechanism, causal explanation, relationship, interpretation, boundary, membership, or analogous proposition defaults to `HYPOTHESIS ONLY — not source-supported`. Hypothesis-only material may guide searches, analyses, model building, or experimental planning, but it does not populate claim titles, signed or accepted edges, mechanism membership, evidence counts, boundary definitions, or analogous evidence-bearing structures.
+Every newly proposed scientific mechanism, causal explanation, relationship, interpretation, boundary, membership, or analogous proposition defaults to `HYPOTHESIS ONLY: not source-supported`. Hypothesis-only material may guide searches, analyses, model building, or experimental planning, but it does not populate claim titles, signed or accepted edges, mechanism membership, evidence counts, boundary definitions, or analogous evidence-bearing structures.
 
-Use `EVIDENCE SUPPORTED — [specific proposition]` only for the exact proposition supported by identified and verified evidence. Record the supporting source or artifact, what the evidence supports, what it does not support, and material limitations. Partial support never promotes a broader claim: only the supported sub-proposition can be proposed for promotion, while the broader claim remains hypothesis-only.
+Use `EVIDENCE SUPPORTED: [specific proposition]` only for the exact proposition supported by identified and verified evidence. Record the supporting source or artifact, what the evidence supports, what it does not support, and material limitations. Partial support never promotes a broader claim: only the supported sub-proposition can be proposed for promotion, while the broader claim remains hypothesis-only.
 
 The User defines the evidentiary threshold and is the only participant who promotes a proposition into evidence-supported project state. AI participants may identify evidence and recommend promotion, but never silently remove a hypothesis-only label or broaden an evidence-supported statement beyond the proposition the User accepted. Preserve the prior hypothesis state and the User's promotion decision in the durable record.
 
