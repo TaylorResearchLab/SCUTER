@@ -110,6 +110,11 @@ AI participants are requested to:
 7. re-verify a description at the point where a claim of novelty or a principal result comes to depend on it;
 8. record instances in which a participant confirms an error immediately upon its being raised, since these indicate a description that was inherited rather than checked and a verification that was available and not performed;
 9. on request, and at the point where a result becomes a principal claim or a workstream resumes after a pause, state the premises the current line of work depends on, identify for each whether it has been verified against an artifact or inherited from the project record, and name for each what observation would show it to be wrong.
+10. treat every new scientific mechanism, causal explanation, relationship, interpretation, boundary, membership, or analogous proposition as `HYPOTHESIS ONLY — not source-supported` unless and until the User promotes that exact proposition under the evidence-support rule below;
+11. allow hypothesis-only material to guide searches, analyses, model building, or experimental planning, but exclude it from claim titles, signed or accepted edges, mechanism membership, evidence counts, boundary definitions, and analogous evidence-bearing project structures;
+12. use `EVIDENCE SUPPORTED — [specific proposition]` only for the exact proposition for which evidence has been identified and verified. The record states the supporting source or artifact, what the evidence supports, what it does not support, and any material limitations. External-source evidence follows `REFERENCE-VALIDATION`; project-generated evidence is tied to the exact accepted artifact or run;
+13. promote a proposition from hypothesis-only to evidence-supported only when the User determines that the evidence meets the project-specific evidentiary threshold for that exact proposition. AI participants may identify evidence and recommend promotion but may not promote a claim themselves;
+14. never treat partial support as support for a broader claim. If evidence supports only a sub-proposition, only that sub-proposition may receive `EVIDENCE SUPPORTED`; the broader statement remains `HYPOTHESIS ONLY — not source-supported`. Preserve the hypothesis history and record the User's promotion decision.
 
 ## S2.5 Durable record  `DURABLE-RECORD`
 
@@ -210,16 +215,22 @@ Review requests and approvals are distinct.
 
 The Topic `Deliberation` is applied where a question is not suited to a proposal-and-review sequence, because the first framing would constrain the response. Participants contribute options, constraints, or interpretations without adopting a preferred answer, and the User determines the next step or decision rule.
 
-## S3.3 Evidence classes
+## S3.3 Evidence classes and claim state
 
-The protocol distinguishes proposals, evidence, file identity, and acceptance.
+The protocol distinguishes hypotheses, evidence-supported propositions, file identity, execution evidence, and User acceptance.
 
-1. Model prose is a proposal or interpretation.
-2. A sandbox run is evidence only for the recorded sandbox, code, and inputs.
-3. A commit identifies a version of a file but does not establish scientific validity.
-4. A User-run result is authoritative only for its recorded code, command, inputs, configuration, and environment.
-5. A citation is acceptable only after `REFERENCE-VALIDATION`, and a novelty claim only after `PRIOR-ART-LINEAGE`.
-6. The User decides whether the combined evidence satisfies the acceptance criteria.
+1. Model prose is a proposal or interpretation. A newly proposed scientific proposition defaults to `HYPOTHESIS ONLY — not source-supported`.
+2. `HYPOTHESIS ONLY — not source-supported` material may be retained and used to guide exploration, but it does not enter evidence-bearing project state. It is excluded from claim titles, signed or accepted edges, mechanism membership, evidence counts, boundary definitions, and analogous evidence-bearing structures.
+3. `EVIDENCE SUPPORTED — [specific proposition]` is claim-specific. Its record identifies the exact proposition, supporting source or artifact, what the evidence supports, what it does not support, and material limitations. A generic statement that a broader mechanism or interpretation is "supported" is insufficient.
+4. Partial support does not promote a broader claim. If evidence supports only one component, that component may be proposed for promotion while the parent mechanism or statement remains `HYPOTHESIS ONLY — not source-supported`.
+5. External-source evidence is admissible only after the applicable `REFERENCE-VALIDATION`; project-generated evidence is tied to the exact run, artifact, inputs, configuration, and accepted execution record.
+6. The User defines the evidentiary threshold for each proposition and is the only participant who can promote it from hypothesis-only to evidence-supported project state. AI participants may recommend promotion but do not perform it themselves.
+7. A sandbox run is evidence only for the recorded sandbox, code, and inputs.
+8. A commit identifies a version of a file but does not establish scientific validity.
+9. A User-run result is authoritative only for its recorded code, command, inputs, configuration, and environment.
+10. Evidence support is bounded by the proposition and evidence recorded. It does not establish unsupported causal, mechanistic, boundary, membership, or generalization claims. A proposition may be returned to hypothesis-only or superseded when later evidence changes its status.
+11. A novelty claim is released only after the applicable `PRIOR-ART-LINEAGE`.
+12. The User decides whether the combined evidence satisfies the acceptance criteria and whether any proposition is promoted.
 
 ## S3.4 File custody and reproducibility
 

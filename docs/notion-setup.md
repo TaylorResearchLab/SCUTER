@@ -4,6 +4,8 @@ Confirm the intended workspace and parent page with the User before creating rec
 
 Create a Project Overview, one Collaboration Log, a prior-art search record, and a citation ledger. Add numbered notebooks for longer methods and analyses as needed. The Overview states what currently governs. The log preserves material actions, evidence, decisions, and next steps.
 
+Evidence-state labels are proposition-specific. When an entry contains more than one scientific proposition, do not use one row-level checkbox or status to imply that all are supported. Label the exact proposition in the entry body or maintain separate claim records: `HYPOTHESIS ONLY — not source-supported` is the default, and `EVIDENCE SUPPORTED — [specific proposition]` is used only after the User accepts the evidence for that proposition.
+
 ## Collaboration Log fields
 
 | Field | Suggested type | Purpose |

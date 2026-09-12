@@ -29,10 +29,18 @@ Read the [complete protocol and templates](references/protocol.md) when adopting
 1. **USER-AUTHORITY.** The User directs scope, methods, scientific questions, access, acceptance, and release. AI participants propose, implement, review, challenge, and repair. No participant accepts its own result into governing project state. Report material concerns directly to the User.
 2. **PRIOR-ART-LINEAGE.** Establish the User's coverage declaration: FULL, CLAIMS, CITATION, or a recorded custom scope. Conduct and record proposition-specific searches required by that declaration. Preserve null searches and candidate dispositions. A different participant establishes lineage for the introducing participant's claims, as specified by the protocol. Do not infer novelty from an unperformed search.
 3. **REFERENCE-VALIDATION.** Enter a proposed reference as Provisional. Check an authoritative source for bibliographic identity and support for the assigned claim. Obtain another participant's check and record uncertainties. The User determines acceptance. A resolved identifier or successful build alone is not validation.
-4. **PRACTICE.** Be constructive and substantive. Check descriptions against actual artifacts before relying on them. Distinguish inherited assumptions from verified evidence. State errors and consequences directly. When a result becomes a principal claim or work resumes, identify its premises and what observations would falsify them.
+4. **PRACTICE.** Be constructive and substantive. Check descriptions against actual artifacts before relying on them. Distinguish inherited assumptions from verified evidence. State errors and consequences directly. When a result becomes a principal claim or work resumes, identify its premises and what observations would falsify them. Default new scientific propositions to `HYPOTHESIS ONLY — not source-supported`; promotion requires claim-specific evidence and User acceptance.
 5. **DURABLE-RECORD.** Record material assignments, decisions, work, reviews, corrections, searches, run evidence, artifact locations, and next actions when they occur. Read back every shared-record or repository write, checking location and retained properties separately. Record session identity and exposure at the time of action. Preserve relevant superseded history.
 
 Release requirements are evaluated under the adopted protocol. An unmet requirement remains recorded as unmet, including when the User elects to proceed and records a reason. Approval fields are positions, not votes that combine into acceptance.
+
+## Evidence-state discipline
+
+Every newly proposed scientific mechanism, causal explanation, relationship, interpretation, boundary, membership, or analogous proposition defaults to `HYPOTHESIS ONLY — not source-supported`. Hypothesis-only material may guide searches, analyses, model building, or experimental planning, but it does not populate claim titles, signed or accepted edges, mechanism membership, evidence counts, boundary definitions, or analogous evidence-bearing structures.
+
+Use `EVIDENCE SUPPORTED — [specific proposition]` only for the exact proposition supported by identified and verified evidence. Record the supporting source or artifact, what the evidence supports, what it does not support, and material limitations. Partial support never promotes a broader claim: only the supported sub-proposition can be proposed for promotion, while the broader claim remains hypothesis-only.
+
+The User defines the evidentiary threshold and is the only participant who promotes a proposition into evidence-supported project state. AI participants may identify evidence and recommend promotion, but never silently remove a hypothesis-only label or broaden an evidence-supported statement beyond the proposition the User accepted. Preserve the prior hypothesis state and the User's promotion decision in the durable record.
 
 ## Start a project
 
@@ -180,6 +188,11 @@ AI participants are requested to:
 7. re-verify a description at the point where a claim of novelty or a principal result comes to depend on it;
 8. record instances in which a participant confirms an error immediately upon its being raised, since these indicate a description that was inherited rather than checked and a verification that was available and not performed;
 9. on request, and at the point where a result becomes a principal claim or a workstream resumes after a pause, state the premises the current line of work depends on, identify for each whether it has been verified against an artifact or inherited from the project record, and name for each what observation would show it to be wrong.
+10. treat every new scientific mechanism, causal explanation, relationship, interpretation, boundary, membership, or analogous proposition as `HYPOTHESIS ONLY — not source-supported` unless and until the User promotes that exact proposition under the evidence-support rule below;
+11. allow hypothesis-only material to guide searches, analyses, model building, or experimental planning, but exclude it from claim titles, signed or accepted edges, mechanism membership, evidence counts, boundary definitions, and analogous evidence-bearing project structures;
+12. use `EVIDENCE SUPPORTED — [specific proposition]` only for the exact proposition for which evidence has been identified and verified. The record states the supporting source or artifact, what the evidence supports, what it does not support, and any material limitations. External-source evidence follows `REFERENCE-VALIDATION`; project-generated evidence is tied to the exact accepted artifact or run;
+13. promote a proposition from hypothesis-only to evidence-supported only when the User determines that the evidence meets the project-specific evidentiary threshold for that exact proposition. AI participants may identify evidence and recommend promotion but may not promote a claim themselves;
+14. never treat partial support as support for a broader claim. If evidence supports only a sub-proposition, only that sub-proposition may receive `EVIDENCE SUPPORTED`; the broader statement remains `HYPOTHESIS ONLY — not source-supported`. Preserve the hypothesis history and record the User's promotion decision.
 
 ## S2.5 Durable record  `DURABLE-RECORD`
 
@@ -280,16 +293,22 @@ Review requests and approvals are distinct.
 
 The Topic `Deliberation` is applied where a question is not suited to a proposal-and-review sequence, because the first framing would constrain the response. Participants contribute options, constraints, or interpretations without adopting a preferred answer, and the User determines the next step or decision rule.
 
-## S3.3 Evidence classes
+## S3.3 Evidence classes and claim state
 
-The protocol distinguishes proposals, evidence, file identity, and acceptance.
+The protocol distinguishes hypotheses, evidence-supported propositions, file identity, execution evidence, and User acceptance.
 
-1. Model prose is a proposal or interpretation.
-2. A sandbox run is evidence only for the recorded sandbox, code, and inputs.
-3. A commit identifies a version of a file but does not establish scientific validity.
-4. A User-run result is authoritative only for its recorded code, command, inputs, configuration, and environment.
-5. A citation is acceptable only after `REFERENCE-VALIDATION`, and a novelty claim only after `PRIOR-ART-LINEAGE`.
-6. The User decides whether the combined evidence satisfies the acceptance criteria.
+1. Model prose is a proposal or interpretation. A newly proposed scientific proposition defaults to `HYPOTHESIS ONLY — not source-supported`.
+2. `HYPOTHESIS ONLY — not source-supported` material may be retained and used to guide exploration, but it does not enter evidence-bearing project state. It is excluded from claim titles, signed or accepted edges, mechanism membership, evidence counts, boundary definitions, and analogous evidence-bearing structures.
+3. `EVIDENCE SUPPORTED — [specific proposition]` is claim-specific. Its record identifies the exact proposition, supporting source or artifact, what the evidence supports, what it does not support, and material limitations. A generic statement that a broader mechanism or interpretation is "supported" is insufficient.
+4. Partial support does not promote a broader claim. If evidence supports only one component, that component may be proposed for promotion while the parent mechanism or statement remains `HYPOTHESIS ONLY — not source-supported`.
+5. External-source evidence is admissible only after the applicable `REFERENCE-VALIDATION`; project-generated evidence is tied to the exact run, artifact, inputs, configuration, and accepted execution record.
+6. The User defines the evidentiary threshold for each proposition and is the only participant who can promote it from hypothesis-only to evidence-supported project state. AI participants may recommend promotion but do not perform it themselves.
+7. A sandbox run is evidence only for the recorded sandbox, code, and inputs.
+8. A commit identifies a version of a file but does not establish scientific validity.
+9. A User-run result is authoritative only for its recorded code, command, inputs, configuration, and environment.
+10. Evidence support is bounded by the proposition and evidence recorded. It does not establish unsupported causal, mechanistic, boundary, membership, or generalization claims. A proposition may be returned to hypothesis-only or superseded when later evidence changes its status.
+11. A novelty claim is released only after the applicable `PRIOR-ART-LINEAGE`.
+12. The User decides whether the combined evidence satisfies the acceptance criteria and whether any proposition is promoted.
 
 ## S3.4 File custody and reproducibility
 
@@ -564,6 +583,10 @@ The User determines who acts next. Lead and review roles may reverse. Multiple s
 
 Record what a reviewer inspected, the specific version, what is supported, what remains uncertain, and any required repair. Keep dated review text as the historical evidence. Review-request checkboxes route current work; approval fields record endorsement of the current version.
 
+Treat claim state separately from review state. Every newly proposed scientific proposition defaults to `HYPOTHESIS ONLY — not source-supported`. It may guide further work but does not enter evidence-bearing structures. Use `EVIDENCE SUPPORTED — [specific proposition]` only when the record identifies the exact supporting source or artifact, what that evidence supports, what it does not support, and its limitations. The User sets the evidentiary threshold and is the only participant who promotes a proposition.
+
+Partial support is not a middle state for the whole claim. If evidence supports one sub-proposition but not a broader mechanism, only that sub-proposition can be proposed as `EVIDENCE SUPPORTED`; the broader mechanism remains `HYPOTHESIS ONLY — not source-supported`. Apply these labels at the proposition level rather than to an entire note or log entry when it contains multiple claims. Preserve the transition and User decision in the durable record.
+
 Each reviewer clears only their own review request after recording a response. A material revision requires reconsidering prior approvals. Record whether the reviewer had already seen another participant's output. Sequential checks remain useful but are not independent confirmation.
 
 After every shared-record or repository write, retrieve the result. Check its location and structured properties separately. After transferring an artifact, confirm access from the receiving context. See [record and review guidance](record-and-review.md).
@@ -597,6 +620,8 @@ A build result is evidence about that build only. Package acceptance is evidence
 Confirm the intended workspace and parent page with the User before creating records. Use the actual tool schemas available to the current session; connector names and accepted parameters can vary.
 
 Create a Project Overview, one Collaboration Log, a prior-art search record, and a citation ledger. Add numbered notebooks for longer methods and analyses as needed. The Overview states what currently governs. The log preserves material actions, evidence, decisions, and next steps.
+
+Evidence-state labels are proposition-specific. When an entry contains more than one scientific proposition, do not use one row-level checkbox or status to imply that all are supported. Label the exact proposition in the entry body or maintain separate claim records: `HYPOTHESIS ONLY — not source-supported` is the default, and `EVIDENCE SUPPORTED — [specific proposition]` is used only after the User accepts the evidence for that proposition.
 
 ## Collaboration Log fields
 
@@ -663,7 +688,7 @@ SCUTER's record connects scientific intent to evidence and accepted artifacts. I
 
 For a material action, record its purpose, responsible participant, exact inputs or governing records, work performed, outputs, uncertainty, and next action. For execution, include the command, source revision, configuration, environment, and resulting files. Compute checksums only after files are complete.
 
-Separate proposed interpretations from observed results. Identify sandbox evidence as such. A repository commit establishes source identity, while a run record states what executed. Neither agreement nor a successful build supplies the missing evidence for a scientific claim.
+Separate proposed interpretations from observed results. Every newly proposed scientific proposition defaults to `HYPOTHESIS ONLY — not source-supported`. Hypothesis-only material may guide further work but is excluded from evidence-bearing project structures. Use `EVIDENCE SUPPORTED — [specific proposition]` only for the exact proposition whose evidence has been identified and verified, and record what the evidence does and does not support. Partial support never promotes the broader claim. The User sets the evidentiary threshold and is the only participant who promotes a proposition. Identify sandbox evidence as such. A repository commit establishes source identity, while a run record states what executed. Neither agreement nor a successful build supplies the missing evidence for a scientific claim.
 
 ## Record identity and exposure prospectively
 
@@ -862,23 +887,23 @@ Creative Commons may be contacted at creativecommons.org
   "status": "development",
   "protocol_source": {
     "path": "protocol/01.work-contract.md",
-    "sha256": "ea7c8073a5b9ee54bff102a69c80e8beca5294ae8bd704f7fc6a3a2352a05fd1"
+    "sha256": "04a81cb45eb8b03971e6c959d3797816334968360a375ac6f1c11c688882ce07"
   },
   "source_files_sha256": {
     "LICENSE.md": "e92080c5a49a1081ed4fbb5c1a72d399a5baf72e384e3dc28371c7c2fb57cf81",
-    "docs/implementation-guide.md": "b1f0ab6ad77a723d171d63ac6edbf1c5ccfd68f6100ca6610394822e3708fc7a",
-    "docs/notion-setup.md": "b96fd1689d02668e6c6562bc254871fd3484eee61d30f31ddafb6791467dab1b",
-    "docs/record-and-review.md": "6ba15adcdc14d5337992cb08c5fe9690e3a72714e40d815bd62edb97b920368d",
-    "protocol/01.work-contract.md": "ea7c8073a5b9ee54bff102a69c80e8beca5294ae8bd704f7fc6a3a2352a05fd1",
-    "skills/scuter/SKILL.md": "1906fa2a16d3562fe0b21d51e5b43b163dba8ebb31503fe93d3669d009e24654"
+    "docs/implementation-guide.md": "e224cfe91aefbfc882ddec7eb2a62fbf497a0b8db78b5972381cfa9f825abebf",
+    "docs/notion-setup.md": "cbd68b443eb8405dcb232baab47caaa6daff9cdb84dae556a04f6f0c22621d97",
+    "docs/record-and-review.md": "8f930c57a6ce58291d31118143612cda4d9677a3bcfafaaa1c39eb83e0bcab80",
+    "protocol/01.work-contract.md": "04a81cb45eb8b03971e6c959d3797816334968360a375ac6f1c11c688882ce07",
+    "skills/scuter/SKILL.md": "45e022d70d64be6052f0fa5ff24b446f5cb3b32305308d37bbbe55290b02ace1"
   },
   "members_sha256": {
     "LICENSE.md": "e92080c5a49a1081ed4fbb5c1a72d399a5baf72e384e3dc28371c7c2fb57cf81",
-    "SKILL.md": "1906fa2a16d3562fe0b21d51e5b43b163dba8ebb31503fe93d3669d009e24654",
-    "references/implementation-guide.md": "00b023e093cfdd1f68eaa17bbe5b53081741861e4a445139863e76c28aebe484",
-    "references/notion-setup.md": "b96fd1689d02668e6c6562bc254871fd3484eee61d30f31ddafb6791467dab1b",
-    "references/protocol.md": "ea7c8073a5b9ee54bff102a69c80e8beca5294ae8bd704f7fc6a3a2352a05fd1",
-    "references/record-and-review.md": "6ba15adcdc14d5337992cb08c5fe9690e3a72714e40d815bd62edb97b920368d"
+    "SKILL.md": "45e022d70d64be6052f0fa5ff24b446f5cb3b32305308d37bbbe55290b02ace1",
+    "references/implementation-guide.md": "a28daad08f63ef3cd70faf004ec0f72852ff5c4f29d44b3dab65bb1af07c7c4a",
+    "references/notion-setup.md": "cbd68b443eb8405dcb232baab47caaa6daff9cdb84dae556a04f6f0c22621d97",
+    "references/protocol.md": "04a81cb45eb8b03971e6c959d3797816334968360a375ac6f1c11c688882ce07",
+    "references/record-and-review.md": "8f930c57a6ce58291d31118143612cda4d9677a3bcfafaaa1c39eb83e0bcab80"
   },
   "document_link_adjustment": "The bundled implementation guide links to references/protocol.md within the Skill."
 }

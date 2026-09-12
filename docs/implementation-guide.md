@@ -47,6 +47,10 @@ The User determines who acts next. Lead and review roles may reverse. Multiple s
 
 Record what a reviewer inspected, the specific version, what is supported, what remains uncertain, and any required repair. Keep dated review text as the historical evidence. Review-request checkboxes route current work; approval fields record endorsement of the current version.
 
+Treat claim state separately from review state. Every newly proposed scientific proposition defaults to `HYPOTHESIS ONLY — not source-supported`. It may guide further work but does not enter evidence-bearing structures. Use `EVIDENCE SUPPORTED — [specific proposition]` only when the record identifies the exact supporting source or artifact, what that evidence supports, what it does not support, and its limitations. The User sets the evidentiary threshold and is the only participant who promotes a proposition.
+
+Partial support is not a middle state for the whole claim. If evidence supports one sub-proposition but not a broader mechanism, only that sub-proposition can be proposed as `EVIDENCE SUPPORTED`; the broader mechanism remains `HYPOTHESIS ONLY — not source-supported`. Apply these labels at the proposition level rather than to an entire note or log entry when it contains multiple claims. Preserve the transition and User decision in the durable record.
+
 Each reviewer clears only their own review request after recording a response. A material revision requires reconsidering prior approvals. Record whether the reviewer had already seen another participant's output. Sequential checks remain useful but are not independent confirmation.
 
 After every shared-record or repository write, retrieve the result. Check its location and structured properties separately. After transferring an artifact, confirm access from the receiving context. See [record and review guidance](record-and-review.md).
