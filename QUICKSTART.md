@@ -6,24 +6,24 @@ For most users, "download SCUTER" means **download one `.skill` file and upload 
 
 Download this file to your computer:
 
-**[Download `scuter-v0.2.1-dev.skill`](https://raw.githubusercontent.com/TaylorResearchLab/SCUTER/daa314e251c8c3aecb0719ed6ba6206f0e13a270/dist/scuter-v0.2.1-dev.skill)**
+**[Download `scuter-v0.2.2-dev.skill`](https://raw.githubusercontent.com/TaylorResearchLab/SCUTER/32be5a0e19a055e73acf7f1b5d265707e35fbfe4/dist/scuter-v0.2.2-dev.skill)**
 
 The `.skill` file is a packaged set of SCUTER instructions. **Do not unzip it, rename it, or edit its contents.** Keep the downloaded file intact.
 
 If clicking the link does not immediately download the file, use your browser's **Save Link As...** command and save it with this exact filename:
 
 ```text
-scuter-v0.2.1-dev.skill
+scuter-v0.2.2-dev.skill
 ```
 
 ## 2. Upload that exact `.skill` file to the AI assistant
 
-If the application accepts `.skill` files as chat attachments, **upload or drag `scuter-v0.2.1-dev.skill` directly into the chat**. For applications such as ChatGPT or Claude where this is supported, that may be all that is required for the assistant to recognize and use the Skill.
+If the application accepts `.skill` files as chat attachments, **upload or drag `scuter-v0.2.2-dev.skill` directly into the chat**. For applications such as ChatGPT or Claude where this is supported, that may be all that is required for the assistant to recognize and use the Skill.
 
 Some applications instead provide a dedicated interface for Skills. In that case, use **Add Skill**, **Install Skill**, **Upload Skill**, or the application's equivalent control and select the same file:
 
 ```text
-scuter-v0.2.1-dev.skill
+scuter-v0.2.2-dev.skill
 ```
 
 The important step is that the AI assistant receives the actual `.skill` file. Merely pasting the GitHub link or filename into the chat is not the same as uploading the file.
@@ -34,7 +34,7 @@ After the Skill is loaded, tell the assistant:
 
 ### If your AI application does not support `.skill` files
 
-Use the **[complete Markdown instructions](https://raw.githubusercontent.com/TaylorResearchLab/SCUTER/daa314e251c8c3aecb0719ed6ba6206f0e13a270/dist/scuter-v0.2.1-dev.md)** instead. Download or open that Markdown file and provide it through the application's supported project-instructions, persistent-instructions, or instruction-document mechanism.
+Use the **[complete Markdown instructions](https://raw.githubusercontent.com/TaylorResearchLab/SCUTER/32be5a0e19a055e73acf7f1b5d265707e35fbfe4/dist/scuter-v0.2.2-dev.md)** instead. Download or open that Markdown file and provide it through the application's supported project-instructions, persistent-instructions, or instruction-document mechanism.
 
 The Markdown edition contains the same SCUTER entry instructions and companion guidance in one readable document. It is the fallback for applications that cannot install the packaged `.skill` file.
 
