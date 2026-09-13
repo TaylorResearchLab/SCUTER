@@ -25,5 +25,19 @@ class CitationLedgerContractTests(unittest.TestCase):
         self.assertIn("one source record per primary work", text)
         self.assertIn("Source-level access or support for one proposition never validates other claims", text)
 
+    def test_version_pinning_blinding_and_claim_control_are_required(self):
+        protocol = (ROOT / "protocol/01.work-contract.md").read_text()
+        notion = (ROOT / "docs/notion-setup.md").read_text()
+        skill = (ROOT / "skills/scuter/SKILL.md").read_text()
+        review = (ROOT / "docs/record-and-review.md").read_text()
+        for text in (protocol, notion, skill, review):
+            self.assertIn("Claim Control Object", text)
+            self.assertIn("stable Claim ID", text)
+        self.assertIn("content digest", protocol)
+        self.assertIn("prospectively blinded by construction", protocol)
+        self.assertIn("Blinded second check/date", notion)
+        self.assertIn("original and current wording", notion)
+        self.assertIn("does not satisfy the independent second-check requirement", skill)
+
 if __name__ == "__main__":
     unittest.main()

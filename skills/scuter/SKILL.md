@@ -32,6 +32,14 @@ Use `EVIDENCE SUPPORTED: [specific proposition]` only for the exact proposition 
 
 The User defines the evidentiary threshold and is the only participant who promotes a proposition into evidence-supported project state. AI participants may identify evidence and recommend promotion, but never silently remove a hypothesis-only label or broaden an evidence-supported statement beyond the proposition the User accepted. Preserve the prior hypothesis state and the User's promotion decision in the durable record.
 
+## Citation-audit discipline
+
+Pin every evidence locator to the exact primary-source version inspected. Record the source version or edition and an immutable version identifier or content digest; page, equation, table, figure, section, or supplement numbering without that pin is not sufficient. A digest identifies bytes or a release and does not itself validate scientific content.
+
+Keep a stable Claim ID across wording that is narrowed without changing the claim's scientific identity. Preserve both original and current wording, the reason/date of narrowing, and the User disposition. A split claim receives child IDs with lineage; a materially different replacement receives a new Claim ID. For manuscript-linked claims, anchor the Claim ID in a versioned Claim Control Object that records the proposition, manuscript file/anchor, citation mapping, repository revision or equivalent version, and a cryptographic digest. Claim-evidence mappings reference the Claim ID plus the exact control-object revision/digest so citation-only and wording edits remain in the same diff chain.
+
+Perform the required citation second check prospectively blinded by construction. Give the second participant the pinned primary source and exact Claim ID/proposition, but withhold the first validator's evidence locator, support note, caveat, and disposition until the reviewer has durably recorded their own locator, paraphrase, caveat, and disposition from the primary text. Only then compare assessments. If prior exposure occurred, label the result as a second check following exposure rather than independent; it does not satisfy the independent second-check requirement for `Validated support`.
+
 ## Start a project
 
 Read the [implementation guide](references/implementation-guide.md). Establish the scientific objective, background resources, participants, access boundaries, accepted evidence, and governing locations with the User. Use the S8 compact template in the protocol. Confirm the destination before creating a shared record. For Notion, read the [setup guidance](references/notion-setup.md) and the actual tool schemas exposed in the current session.

@@ -45,8 +45,10 @@ Suggested source-level properties:
 | Canonical identifier | Text or URL | DOI, arXiv identifier, stable URL, or other canonical identifier |
 | Primary source | Text | Concise human-readable identity, usually title and year |
 | Complete primary text | Files, URL, or text | Exact uploaded PDF, full-text URL, repository path, or other artifact actually inspected |
+| Source version / edition | Text | Publication version, edition, release, or other human-readable version identity |
+| Source version pin | Text | Immutable version identifier or content digest for the exact text inspected |
 | Complete text status | Select | `Obtained`, `Needs full text`, or `Not yet checked` |
-| Complete text inspected | Checkbox | Whether the complete primary text has actually been inspected |
+| Complete text inspected | Checkbox | Whether the pinned complete primary text has actually been inspected |
 | Inspected by | Text or person | Participant that inspected the complete text |
 | Inspected date | Date | Date of complete-text inspection |
 | Source notes | Text | Source-level access or identity notes; not a claim-wide validation field |
@@ -55,11 +57,15 @@ Suggested source-level properties:
 
 Inside each source record's page, maintain a claim-evidence mapping table. A useful structure is:
 
-| Claim ID | Exact project/manuscript proposition | Project/manuscript location | Evidence location | Evidence note | Scope/caveat | Validator/date | Second check | User acceptance | Mapping status |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| `INTRO-03` | Exact proposition being cited | `Main Intro P2` | p. 7, Fig. 2 | Short paraphrase of what the complete primary text establishes | Any narrower scope or limitation | participant + date | reviewer + disposition | accepted / not accepted / pending | `Validated support`, `Supports narrower formulation`, `Does not support`, `Needs review`, or `Provisional` |
+| Claim ID | Original proposition | Current proposition | Claim Control Object revision / digest | Source version pin | Evidence location | Evidence note | Scope/caveat | Validator/date | Blinded second check/date | User acceptance | Mapping status |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| `INTRO-03` | Original proposition first audited | Current or narrowed proposition | repository revision + digest | source version / digest | p. 7, Fig. 2 | Short paraphrase of what the pinned complete primary text establishes | Any narrower scope or limitation | participant + date | reviewer + independent locator/disposition + date | accepted / not accepted / pending | `Validated support`, `Supports narrower formulation`, `Does not support`, `Needs review`, or `Provisional` |
 
-`Validated support` is claim-specific. It is used only after complete-primary-text inspection, the required second check, and User acceptance for that exact proposition. If the same source is cited for another proposition, add another mapping row and validate it separately. If the evidence supports only a narrower formulation, record the narrower wording rather than validating the broader claim.
+The `Current proposition` field is the **Exact project/manuscript proposition** being validated for that mapping. `Validated support` is claim-specific. It is used only after inspection of the pinned complete primary text, a prospectively blinded second check, and User acceptance for that exact proposition. The second reviewer receives the exact Claim ID/proposition and pinned source but does not see the first validator's locator, evidence note, caveat, or disposition before recording their own assessment. If the same source is cited for another proposition, add another mapping row and validate it separately.
+
+Use a stable Claim ID when review narrows wording without changing the scientific identity of the claim. Preserve **original and current wording** rather than overwriting history, including the original proposition and current narrowed proposition. If one claim splits, create child Claim IDs with lineage to the parent; if the proposition is materially replaced, create a new Claim ID.
+
+For manuscript-linked claims, keep a versioned **Claim Control Object** in the manuscript or project repository. It maps Claim IDs to current proposition text, manuscript file and stable anchor, citation mapping, and claim lineage, and records a repository revision or equivalent version plus a cryptographic digest such as SHA-256. Ledger mappings point to the exact control-object revision/digest. Paragraph/page/line positions can be convenience locators, but the Claim ID plus control-object version is the durable manuscript anchor. Citation-only edits and narrowed wording update the control object and therefore remain visible in the version/diff chain.
 
 Prefer precise evidence locators plus concise paraphrases over large copied passages. Routine citation review belongs in this ledger. Add a Collaboration Log entry only when the citation work is itself a material project event, such as finishing validation of a manuscript block, discovering a consequential citation error, changing scientific interpretation, or recording a User decision.
 
