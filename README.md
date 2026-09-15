@@ -51,7 +51,7 @@ Maintainers can build and verify all distributions offline using Python 3.10 or 
 
 ## Companion paper
 
-[*Beyond the Chat Window*](https://github.com/TaylorResearchLab/beyond-the-chat-window) is the companion paper to SCUTER.
+[*SCUTER: A User-Directed Framework for Reproducible Scientific Collaboration Across AI Systems*](https://github.com/TaylorResearchLab/scuter-manuscript) is the companion paper to SCUTER.
 
 ## Attribution and licensing
 
