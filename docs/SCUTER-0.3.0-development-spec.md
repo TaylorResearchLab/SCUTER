@@ -85,6 +85,66 @@ SCUTER should explicitly tell participating AI systems that scientists value neg
 
 This rationale is explanatory. It does **not** create an importance threshold. All negative or limiting findings are still reported.
 
+### 2.5 No unsourced scientific assertions
+
+**NO UNSOURCED SCIENTIFIC ASSERTIONS.**
+
+Every scientific assertion, equation, quantitative value, methodological premise, transformation, interpretation, and inferential step must have a visible provenance path. A statement is scientifically admissible only when at least one of the following is true:
+
+1. **Prior-art provenance:** the assertion is supported by a validated source-claim mapping from the complete primary text of the relevant source; or
+2. **Direct derivation lineage:** the assertion is derived explicitly from already sourced premises and/or pinned project evidence, with the derivation steps, assumptions, transformations, code, calculations, or equations preserved well enough for another participant or investigator to reconstruct the result.
+
+If neither path exists, the assertion is **UNSUPPORTED** and must not enter accepted scientific state.
+
+Model memory, plausibility, fluency, familiarity, or a judgment that a statement is "standard" do not establish provenance. A participant may use such knowledge to suggest a candidate assertion or source, but the assertion remains unsupported until its provenance or derivation is established.
+
+### 2.6 Equations require equation-level provenance
+
+Every equation introduced into scientific work must have one of the following:
+
+- a validated citation to prior art establishing that equation or the formalism from which it is taken; or
+- a complete derivation from sourced premises, definitions, prior equations, and explicitly stated assumptions.
+
+A derivation must preserve the line of reasoning between the sourced premise and the resulting equation. Intermediate steps may be algebraic, computational, or symbolic, but they cannot depend on unstated assumptions or model memory.
+
+An equation that is copied, reconstructed from memory, or generated because it "looks standard" is not trusted until its provenance or derivation is established.
+
+When a derivation introduces an approximation, convention, boundary condition, parameterization, sign convention, coordinate choice, normalization, empirical constant, or domain restriction, that choice must itself be sourced or explicitly justified and recorded.
+
+### 2.7 Assertion provenance for project-generated results
+
+Project-generated results do not require an external citation merely because they are new. They require a direct derivation and provenance chain to the project's evidence.
+
+For a project-generated assertion, preserve enough of the following to reconstruct the claim as applicable:
+
+- pinned input data or artifact identity;
+- source and provenance of the input data;
+- exact code or analytical method and version;
+- configuration, parameters, and assumptions;
+- equations or transformations used;
+- execution environment and command when relevant;
+- intermediate outputs needed to audit the derivation;
+- final output or statistic;
+- mapping from that output to the scientific assertion.
+
+Any externally inherited premise used in that derivation remains subject to prior-art provenance and reference validation.
+
+### 2.8 Derivation chains are part of the trust boundary
+
+SCUTER must not treat a final citation at the end of a paragraph as sufficient if the actual claim depends on unsupported intermediate premises.
+
+For each accepted assertion, a reviewer should be able to answer:
+
+- What is the exact proposition?
+- Which source or project evidence establishes its starting premise?
+- What transformations or inferential steps connect that premise to the final assertion?
+- Which assumptions enter along the way?
+- Which equations are inherited and which are derived?
+- Where are the derivation artifacts preserved?
+- Can another participant reconstruct the same result without relying on model memory?
+
+If the chain breaks at any point, the assertion is not yet trusted. The appropriate state is **UNSUPPORTED**, **NOT DERIVABLE**, or a narrower supported formulation, depending on what the evidence permits.
+
 ## 3. Required negative-result categories
 
 The protocol and Skill must explicitly require reporting and logging of at least the following categories.
@@ -283,7 +343,7 @@ A participant also fails if it marks such a finding immaterial or dismissed with
 - [ ] Complete a full content review of the conditioned 0.2.2-dev protocol range rather than only package/end-state verification.
 - [ ] Close outstanding independent Cross-AI Collaboration Claude reviews of the high-definition citation/evidence architecture.
 
-### B. Scientific reporting integrity
+### B. Scientific reporting and assertion integrity
 
 - [ ] Add the report-all-results invariant near the beginning of the Skill.
 - [ ] Add a formal standing directive to the protocol.
@@ -296,6 +356,14 @@ A participant also fails if it marks such a finding immaterial or dismissed with
 - [ ] Add reporting-integrity review questions.
 - [ ] Add required reporting-integrity section to substantive result reports.
 - [ ] Add behavioral tests and clean controls.
+- [ ] Add the no-unsourced-scientific-assertions invariant near the beginning of the Skill.
+- [ ] Require provenance or explicit derivation lineage for every scientific assertion and equation.
+- [ ] Add equation-level provenance rules, including assumptions, approximations, conventions, and boundary conditions.
+- [ ] Add direct derivation requirements for project-generated results from pinned data, code, parameters, execution, and outputs.
+- [ ] Add an explicit `UNSUPPORTED` state for assertions lacking both validated provenance and reconstructable derivation.
+- [ ] Extend Claim Control Objects to preserve derivation lineage in addition to citation mappings.
+- [ ] Add reciprocal-review checks for broken provenance or derivation chains.
+- [ ] Add behavioral tests containing unsourced equations, hidden unsupported premises, uncited "standard" assertions, and correct fully derived controls.
 
 ### C. Application testing
 
@@ -363,6 +431,9 @@ The 0.3.0 line is not ready for stable release until all of the following are tr
 13. A full content review of the release candidate is complete.
 14. Exact release artifacts and checksums are pinned.
 15. The User explicitly accepts the stable release.
+16. Every scientific assertion in the tested workflow can be traced either to validated prior art or to a reconstructable derivation from sourced premises and/or pinned project evidence.
+17. Every equation has equation-level provenance or a complete recorded derivation, including assumptions and conventions that affect its meaning.
+18. Assertions with broken provenance or derivation chains remain explicitly `UNSUPPORTED` or `NOT DERIVABLE` rather than being accepted on plausibility or model authority.
 
 ## 12. Non-goals
 
@@ -374,8 +445,11 @@ SCUTER 0.3.0 should **not**:
 - allow an AI to silently discard a result because it appears minor;
 - convert non-detection into universal absence;
 - treat agreement between AI participants as evidence;
-- claim that the reporting-integrity instructions guarantee honesty or correctness.
+- claim that the reporting-integrity instructions guarantee honesty or correctness;
+- accept an equation because it appears familiar or mathematically plausible without provenance or derivation;
+- exempt an assertion from provenance because it is described as "standard," "obvious," or "common knowledge";
+- allow a final citation to conceal unsupported intermediate premises in a derivation chain.
 
 The goal is narrower and operational:
 
-**No negative or limiting scientific result disappears because an AI participant preferred a cleaner success narrative. Every such result is surfaced, logged, and left for deliberate investigator disposition.**
+**No negative or limiting scientific result disappears because an AI participant preferred a cleaner success narrative. Every such result is surfaced, logged, and left for deliberate investigator disposition. No scientific assertion is trusted because an AI participant says it is true: every accepted assertion and equation must carry validated provenance or a reconstructable derivation line.**
