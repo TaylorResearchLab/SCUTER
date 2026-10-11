@@ -196,7 +196,61 @@ This section must not be used to hide findings that belong in the main body of t
 
 ## 6. Durable-record changes
 
-### 6.1 Collaboration Log
+### 6.1 FAIR-oriented, self-locating analysis records
+
+**EVERY COLLABORATION LOG POST THAT DESCRIBES ANALYSIS MUST ITSELF BE FAIR-ORIENTED, SELF-LOCATING, AND TRACEABLE TO THE RECORDS THAT GOVERN IT.**
+
+A reader who lands directly on an analysis post must be able to determine, without reconstructing the surrounding conversation or browsing the database chronologically:
+
+- what scientific question, claim, analysis, or work unit is being discussed;
+- why the analysis was performed;
+- which prior record, decision, handoff, assignment, or accepted state it continues, tests, reconciles, supersedes, or modifies;
+- which artifacts and evidence govern the analysis;
+- what was done and what result was obtained;
+- what negative, limiting, unresolved, or not-derivable findings were encountered;
+- what the result changes, confirms, narrows, rejects, or leaves unresolved in project state;
+- what review and User-acceptance state applies;
+- what happens next.
+
+A technically detailed post is not sufficient if it begins in the middle of an analysis lineage and requires the reader to infer its context from unexplained local labels, acronyms, prior numerical comparisons, or unstated earlier decisions.
+
+#### Required traceability fields
+
+Every analysis-bearing log post must preserve, directly or through stable structured fields, at least:
+
+1. **Stable record identity.** A durable page/record URL or identifier and, when useful, a semantic Analysis/Work Unit/Claim ID that remains stable across references.
+2. **Purpose and bounded question.** A concise statement of what this analysis is evaluating and why it exists.
+3. **Upstream reference post(s).** Explicit links to the immediately governing prior record(s): for example the assignment, prior analysis, review, handoff, decision, accepted-state entry, or Project Overview from which the current work follows. A first analysis entry links to the project-start or governing overview record. A blank upstream-reference field is not acceptable merely because the author assumes the chronology is obvious.
+4. **Relationship to each upstream record.** State whether the current post continues, reproduces, reviews, reconciles, challenges, supersedes, narrows, extends, or implements the referenced record.
+5. **Governing artifacts/evidence.** Stable links or identifiers for the relevant manuscript/control object, source evidence, data, code, reproduction package, repository revision, or other authoritative material.
+6. **Analysis/result summary.** Enough context to understand the method and result, with links to complete reproducibility materials when the work is computational, quantitative, or analytical.
+7. **Impact on project state.** State explicitly what the result changes, confirms, rejects, narrows, supersedes, or leaves unresolved. Do not make the reader infer impact from numerical results alone.
+8. **Negative and unresolved findings.** Surface and link all applicable findings under the report-all-results invariant.
+9. **Review and acceptance state.** Identify review status, reviewer/session when applicable, User disposition, and whether the result is Candidate, accepted, rejected, parked, superseded, or otherwise governed by project-specific states.
+10. **Next action.** Record the bounded continuation or explicitly state that none is required.
+
+#### FAIR orientation of the log entry
+
+For SCUTER purposes, an analysis-bearing log record is FAIR-oriented when the record itself supports:
+
+- **Findability:** stable identity, descriptive title, date, work-unit/claim identifiers where applicable, and explicit upstream links make the record locatable in its scientific lineage;
+- **Accessibility:** referenced records and artifacts have documented locations and are accessible to the authorized participants who are expected to use them;
+- **Interoperability:** repeated structured fields, stable identifiers, relationship labels, repository revisions, Claim IDs, and other machine-readable identifiers connect the record to related objects across systems;
+- **Reusability:** the post contains enough scientific purpose, provenance, method/result context, limitations, impact, review state, and links to supporting artifacts for a later investigator or agent to understand and reuse the record without reconstructing the original chat session.
+
+FAIR orientation does not require making private or protected material public. Accessibility remains scoped to authorized users and appropriate environments.
+
+#### No orphan analysis posts
+
+An analysis-bearing Collaboration Log post is **orphaned** if it lacks a traceable route to the governing prior state or fails to explain its role in that lineage. Orphaned analysis posts are incomplete records even if their internal calculations are correct.
+
+The minimum lineage rule is:
+
+**Every analysis post points backward to the record(s) that make it intelligible. Every later post points backward in turn, creating a navigable scientific chain.**
+
+The reader must not be forced to search by date, guess from acronyms, inspect unrelated pages, or reconstruct chat history to understand why an analysis exists or what its result means.
+
+### 6.2 Collaboration Log findings
 
 Negative and limiting findings become first-class project state.
 
@@ -215,13 +269,13 @@ For each such finding, record:
 
 No finding may be marked dismissed, immaterial, acceptable, resolved, or superseded solely by an AI participant.
 
-### 6.2 Handoffs
+### 6.3 Handoffs
 
 Every handoff must include unresolved or recently dispositioned negative/limiting findings.
 
 A new session must not inherit only the positive or accepted narrative while adverse findings remain elsewhere in the project record.
 
-### 6.3 Project overview / accepted state
+### 6.4 Project overview / accepted state
 
 If an unresolved negative or limiting finding affects accepted project state, the Project Overview or equivalent current-state record must link to it until the User resolves or explicitly accepts it.
 
@@ -433,6 +487,12 @@ A participant also fails if it marks such a finding immaterial or dismissed with
 - [ ] Add independent-review outcome fields including reviewer/session identity, access verification, observed output, expected-output comparison, discrepancy state, and exposure/blinding status.
 - [ ] Add User-directed storage selection: agents recommend Notion, GitHub, or another logical project location based on access/versioning/privacy needs; the User chooses the authoritative location.
 - [ ] Add multi-agent handoff validation before independent review begins.
+- [ ] Require every analysis-bearing Collaboration Log post to be FAIR-oriented and self-locating rather than understandable only from chronology or chat context.
+- [ ] Require stable record identity plus explicit upstream Reference post links and relationship labels for every analysis entry.
+- [ ] Require a concise purpose/bounded question and explicit impact-on-project-state statement in every analysis entry.
+- [ ] Define an orphan-analysis-post failure state and prevent logging/review completion when the governing prior record cannot be traced.
+- [ ] Add structured analysis-record fields or templates for Purpose, Work Unit/Claim ID, Upstream Reference Post(s), Relationship, Governing Artifacts, Result, Negative/Unresolved Findings, Impact, Review/Acceptance State, and Next Action.
+- [ ] Add behavioral tests in which an otherwise correct analysis post lacks upstream provenance or impact context and must fail the FAIR/self-location gate.
 
 ### C. Application testing
 
@@ -508,6 +568,10 @@ The 0.3.0 line is not ready for stable release until all of the following are tr
 21. Scientific analysis state, reproduction-package state, reviewer-access state, independent-review state, discrepancy state, and User acceptance state are tracked separately.
 22. The authoritative reproduction location is selected by the User after agent recommendations based on access, versionability, artifact type, privacy, and replay needs.
 23. Independent review preserves the required review firewall while still providing enough source material and procedure for genuine reconstruction.
+24. Every analysis-bearing Collaboration Log post has a stable identity, explicit purpose, at least one governing upstream reference unless it is the project-start record, and an explicit relationship to that upstream state.
+25. Every analysis-bearing post states its impact on project state so a reader does not have to infer meaning from local labels, numbers, or chronology.
+26. Analysis posts are understandable when opened directly: a later authorized investigator or agent can trace backward through reference posts to the originating question/decision and forward through later references without reconstructing chat history.
+27. Orphan analysis posts fail the durable-record gate even when the underlying analysis itself is scientifically correct.
 
 ## 12. Non-goals
 
@@ -525,8 +589,11 @@ SCUTER 0.3.0 should **not**:
 - allow a final citation to conceal unsupported intermediate premises in a derivation chain;
 - treat a log summary, local path, checksum, or artifact name as a substitute for an accessible reproduction package;
 - call a computational or analytical result independently reviewed when the reviewer could not retrieve the required inputs and procedure;
-- let the originating agent choose the authoritative storage location in place of the User.
+- let the originating agent choose the authoritative storage location in place of the User;
+- treat an analysis post as complete when its reader must guess which prior analysis, decision, or claim it refers to;
+- rely on database chronology, search, unexplained acronyms, or conversation memory as a substitute for explicit record lineage;
+- leave Purpose or upstream Reference post fields empty on an analysis-bearing entry when a governing prior record exists.
 
 The goal is narrower and operational:
 
-**No negative or limiting scientific result disappears because an AI participant preferred a cleaner success narrative. Every such result is surfaced, logged, and left for deliberate investigator disposition. No scientific assertion is trusted because an AI participant says it is true: every accepted assertion and equation must carry validated provenance or a reconstructable derivation line. No computational, quantitative, or analytical result is trusted merely because an agent says it reproduced it: the accessible source, reproducible procedure, expected output, and independent review outcome must be preserved.**
+**No negative or limiting scientific result disappears because an AI participant preferred a cleaner success narrative. Every such result is surfaced, logged, and left for deliberate investigator disposition. No scientific assertion is trusted because an AI participant says it is true: every accepted assertion and equation must carry validated provenance or a reconstructable derivation line. No computational, quantitative, or analytical result is trusted merely because an agent says it reproduced it: the accessible source, reproducible procedure, expected output, and independent review outcome must be preserved. No analysis record is complete if it cannot locate itself in the scientific lineage: every analysis post must identify what it is doing, what prior state governs it, and what its result changes.**
