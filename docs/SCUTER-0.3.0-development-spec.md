@@ -286,6 +286,68 @@ But the reviewer may not suppress the finding because it appears minor.
 
 The User decides whether the broader project continues, changes direction, or stops.
 
+### 8.3 Reproducibility and independent-review gate for computational, quantitative, and analytical results
+
+**EVERY COMPUTATIONAL, QUANTITATIVE, OR ANALYTICAL RESULT REQUIRES AN ACCESSIBLE SOURCE, A REPRODUCIBLE PROCEDURE, AN EXPECTED OUTPUT, AND A RECORDED INDEPENDENT REVIEW OUTCOME.**
+
+A result is not reproducibility-complete merely because an agent reports what it calculated, names a script, records a checksum, or points to a local runtime path. The record must preserve enough accessible material for another authorized reviewer to determine independently whether the result is correct.
+
+A candidate result may be generated before all four elements are complete, but until they are complete it must remain explicitly marked as not independently reviewable or not reproducibility-complete and must not enter accepted scientific state.
+
+For every applicable result, preserve the following four elements:
+
+1. **Accessible source.** Preserve the exact source inputs, data, manuscript/control object, primary evidence, code, scripts, notebooks, mathematical review, or other artifacts needed to reconstruct the result, with version identity and cryptographic hashes where practical. Accessibility is judged relative to the intended authorized reviewer. A local runtime path, checksum alone, or inaccessible private repository does not satisfy this requirement. When data or artifacts are protected or permission-restricted, accessibility means lawful access by the designated authorized reviewer within the permitted environment; SCUTER does not require copying protected material into an inappropriate shared system.
+2. **Reproducible procedure.** Preserve the complete procedure needed to reconstruct the result. As applicable this includes code and algorithm versions, software environment and dependencies, parameters, assumptions, random seeds, commands, mathematical derivations, intermediate artifacts, and the sequence of operations needed to obtain the result.
+3. **Expected output.** Record the output that the procedure is expected to produce, including exact values, output structure, tolerances, acceptable ranges, determinism expectations, or comparison criteria as appropriate. To preserve independent review, the expected output may be durably recorded but withheld from the reviewer until the reviewer has independently executed or evaluated the procedure and durably recorded their own result.
+4. **Recorded independent review outcome.** Record who or which named agent/session performed the independent review, the date, whether required artifacts were actually accessible, whether the procedure was reproduced or otherwise independently checked, the reviewer-observed output, comparison with the expected output, discrepancies, unresolved questions, exposure/blinding status when relevant, and the review disposition. Agreement without an independently accessible procedure is not an independent reproduction outcome.
+
+#### Storage and access location
+
+The complete reproduction package may be maintained in **Notion, GitHub, or another User-approved project location**. The storage location is not prescribed by SCUTER.
+
+Before the User chooses the location, the participating agent(s) should make concise, logical recommendations based on factors such as:
+- whether the material is primarily executable/versioned code versus narrative scientific record;
+- artifact size and file type;
+- version-control and diff requirements;
+- reviewer permissions and cross-agent retrieval capability;
+- sensitivity, privacy, or protected-data constraints;
+- need for immutable version identity or hashing;
+- long-term durability and ease of replay.
+
+**The User decides the authoritative location.** The agent must then verify that the intended reviewer can actually retrieve the required artifacts from that location before the review is treated as independently executable.
+
+#### Separate status dimensions
+
+SCUTER must keep at least the following states distinct:
+
+1. scientific analysis performed;
+2. reproduction package assembled;
+3. reviewer access verified;
+4. independent reproduction/review performed;
+5. discrepancies resolved or explicitly left open;
+6. User scientific acceptance and lock.
+
+Completion of an earlier state does not imply completion of a later state. In particular, "analysis complete" does not mean "reproducibility complete," and "reproduction package assembled" does not mean "independently reproduced."
+
+#### Multi-agent handoff requirement
+
+Before requesting an independent review, verify that the reviewer has access to:
+- the exact manuscript, claim, or control object under review;
+- the relevant source evidence and input artifacts;
+- an appropriate reproduction procedure;
+- underlying data and software when required and authorized;
+- a clear statement of the bounded review assignment.
+
+Where independence matters, preserve the review firewall. A blinded reviewer may receive the source inputs and reproduction procedure without the originating agent's conclusion or expected output until the reviewer has durably recorded their own result. After that record exists, the expected output and originating result can be revealed for reconciliation.
+
+#### Completion rule
+
+A computational, quantitative, or analytical result cannot enter an independently reviewable or accepted state unless another authorized reviewer can access the complete materials needed to reconstruct it and the independent review outcome is recorded.
+
+The central rule is:
+
+**An agent must not merely document what it did. It must preserve enough accessible evidence and procedure for another authorized reviewer to determine independently whether what it did was correct.**
+
 ## 9. Behavioral validation suite for 0.3.0
 
 Packaging and unit tests are not sufficient. The next stable release should include application-level behavioral evaluation.
@@ -364,6 +426,13 @@ A participant also fails if it marks such a finding immaterial or dismissed with
 - [ ] Extend Claim Control Objects to preserve derivation lineage in addition to citation mappings.
 - [ ] Add reciprocal-review checks for broken provenance or derivation chains.
 - [ ] Add behavioral tests containing unsourced equations, hidden unsupported premises, uncited "standard" assertions, and correct fully derived controls.
+- [ ] Add the four-part reproducibility gate for every computational, quantitative, or analytical result: accessible source, reproducible procedure, expected output, and recorded independent review outcome.
+- [ ] Define separate scientific, reproducibility, artifact-access, and review states so analysis completion cannot imply reproducibility completion.
+- [ ] Add a reviewer-access verification step; local runtime paths, checksums alone, and inaccessible private repositories must fail this gate.
+- [ ] Add a reproduction-manifest template covering exact inputs/hashes, code and environment, parameters/assumptions/seeds, commands/procedures, intermediate artifacts, expected outputs/tolerances, limitations/discrepancies, and reviewer-accessible locations.
+- [ ] Add independent-review outcome fields including reviewer/session identity, access verification, observed output, expected-output comparison, discrepancy state, and exposure/blinding status.
+- [ ] Add User-directed storage selection: agents recommend Notion, GitHub, or another logical project location based on access/versioning/privacy needs; the User chooses the authoritative location.
+- [ ] Add multi-agent handoff validation before independent review begins.
 
 ### C. Application testing
 
@@ -434,6 +503,11 @@ The 0.3.0 line is not ready for stable release until all of the following are tr
 16. Every scientific assertion in the tested workflow can be traced either to validated prior art or to a reconstructable derivation from sourced premises and/or pinned project evidence.
 17. Every equation has equation-level provenance or a complete recorded derivation, including assumptions and conventions that affect its meaning.
 18. Assertions with broken provenance or derivation chains remain explicitly `UNSUPPORTED` or `NOT DERIVABLE` rather than being accepted on plausibility or model authority.
+19. Every computational, quantitative, or analytical result has an accessible source package, a reproducible procedure, a recorded expected output or tolerance, and a recorded independent review outcome.
+20. Reviewer access is verified against the designated reviewer's actual permissions or retrieval capability; a local path, checksum alone, or inaccessible repository does not satisfy accessibility.
+21. Scientific analysis state, reproduction-package state, reviewer-access state, independent-review state, discrepancy state, and User acceptance state are tracked separately.
+22. The authoritative reproduction location is selected by the User after agent recommendations based on access, versionability, artifact type, privacy, and replay needs.
+23. Independent review preserves the required review firewall while still providing enough source material and procedure for genuine reconstruction.
 
 ## 12. Non-goals
 
@@ -448,8 +522,11 @@ SCUTER 0.3.0 should **not**:
 - claim that the reporting-integrity instructions guarantee honesty or correctness;
 - accept an equation because it appears familiar or mathematically plausible without provenance or derivation;
 - exempt an assertion from provenance because it is described as "standard," "obvious," or "common knowledge";
-- allow a final citation to conceal unsupported intermediate premises in a derivation chain.
+- allow a final citation to conceal unsupported intermediate premises in a derivation chain;
+- treat a log summary, local path, checksum, or artifact name as a substitute for an accessible reproduction package;
+- call a computational or analytical result independently reviewed when the reviewer could not retrieve the required inputs and procedure;
+- let the originating agent choose the authoritative storage location in place of the User.
 
 The goal is narrower and operational:
 
-**No negative or limiting scientific result disappears because an AI participant preferred a cleaner success narrative. Every such result is surfaced, logged, and left for deliberate investigator disposition. No scientific assertion is trusted because an AI participant says it is true: every accepted assertion and equation must carry validated provenance or a reconstructable derivation line.**
+**No negative or limiting scientific result disappears because an AI participant preferred a cleaner success narrative. Every such result is surfaced, logged, and left for deliberate investigator disposition. No scientific assertion is trusted because an AI participant says it is true: every accepted assertion and equation must carry validated provenance or a reconstructable derivation line. No computational, quantitative, or analytical result is trusted merely because an agent says it reproduced it: the accessible source, reproducible procedure, expected output, and independent review outcome must be preserved.**
