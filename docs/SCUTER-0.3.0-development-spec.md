@@ -145,6 +145,28 @@ For each accepted assertion, a reviewer should be able to answer:
 
 If the chain breaks at any point, the assertion is not yet trusted. The appropriate state is **UNSUPPORTED**, **NOT DERIVABLE**, or a narrower supported formulation, depending on what the evidence permits.
 
+### 2.9 Concrete-example grounding in scientific communication
+
+**WHEN CONCRETE SCIENTIFIC EXAMPLES EXIST, KEEP THE WRITING ANCHORED TO THEM.**
+
+In manuscripts, reports, presentations, responses, and other scientific communications, do not replace available concrete examples with generalized prose merely to make the writing smoother, shorter, or more abstract.
+
+When a Results, Discussion, or analogous section contains specific examples, measurements, entities, contrasts, pathways, genes, diseases, source pairs, query outcomes, failure modes, or other concrete observations, use those examples to carry the scientific argument. General statements may synthesize multiple examples, but the synthesis must remain traceable to the examples that justify it.
+
+Prefer the pattern:
+
+`concrete observation -> local interpretation -> broader pattern, if supported`
+
+rather than:
+
+`broad claim -> generic explanation -> examples omitted`.
+
+Do not convert specific empirical content into vague statements such as `the method performed well`, `the sources were complementary`, or `the analysis revealed meaningful relationships` when the communication can instead state what actually happened.
+
+Preserve scientifically informative details such as identity, direction, magnitude, contrast, failure mode, and boundary when they are material to understanding the result. If compression is necessary, retain the examples with the strongest evidentiary or explanatory value and state what generalization they support.
+
+Before finalizing Results, Discussion, abstract, response, or presentation text, check whether concrete examples in the source material have been abstracted away. Restore them when their removal weakens the scientific meaning.
+
 ## 3. Required negative-result categories
 
 The protocol and Skill must explicitly require reporting and logging of at least the following categories.
@@ -480,6 +502,8 @@ A participant also fails if it marks such a finding immaterial or dismissed with
 - [ ] Extend Claim Control Objects to preserve derivation lineage in addition to citation mappings.
 - [ ] Add reciprocal-review checks for broken provenance or derivation chains.
 - [ ] Add behavioral tests containing unsourced equations, hidden unsupported premises, uncited "standard" assertions, and correct fully derived controls.
+- [ ] Add the concrete-example grounding rule to scientific-writing guidance: preserve informative examples in Results/Discussion and use generalization only as a synthesis of concrete evidence.
+- [ ] Add a regression where a draft abstracts away specific examples and must be repaired without inventing new evidence or overloading the prose.
 - [ ] Add the four-part reproducibility gate for every computational, quantitative, or analytical result: accessible source, reproducible procedure, expected output, and recorded independent review outcome.
 - [ ] Define separate scientific, reproducibility, artifact-access, and review states so analysis completion cannot imply reproducibility completion.
 - [ ] Add a reviewer-access verification step; local runtime paths, checksums alone, and inaccessible private repositories must fail this gate.
@@ -568,10 +592,11 @@ The 0.3.0 line is not ready for stable release until all of the following are tr
 21. Scientific analysis state, reproduction-package state, reviewer-access state, independent-review state, discrepancy state, and User acceptance state are tracked separately.
 22. The authoritative reproduction location is selected by the User after agent recommendations based on access, versionability, artifact type, privacy, and replay needs.
 23. Independent review preserves the required review firewall while still providing enough source material and procedure for genuine reconstruction.
-24. Every analysis-bearing Collaboration Log post has a stable identity, explicit purpose, at least one governing upstream reference unless it is the project-start record, and an explicit relationship to that upstream state.
-25. Every analysis-bearing post states its impact on project state so a reader does not have to infer meaning from local labels, numbers, or chronology.
-26. Analysis posts are understandable when opened directly: a later authorized investigator or agent can trace backward through reference posts to the originating question/decision and forward through later references without reconstructing chat history.
-27. Orphan analysis posts fail the durable-record gate even when the underlying analysis itself is scientifically correct.
+24. Scientific communication preserves concrete examples when they materially carry the result or interpretation; broad prose remains traceable to those examples rather than replacing them.
+25. Every analysis-bearing Collaboration Log post has a stable identity, explicit purpose, at least one governing upstream reference unless it is the project-start record, and an explicit relationship to that upstream state.
+26. Every analysis-bearing post states its impact on project state so a reader does not have to infer meaning from local labels, numbers, or chronology.
+27. Analysis posts are understandable when opened directly: a later authorized investigator or agent can trace backward through reference posts to the originating question/decision and forward through later references without reconstructing chat history.
+28. Orphan analysis posts fail the durable-record gate even when the underlying analysis itself is scientifically correct.
 
 ## 12. Non-goals
 
@@ -592,7 +617,8 @@ SCUTER 0.3.0 should **not**:
 - let the originating agent choose the authoritative storage location in place of the User;
 - treat an analysis post as complete when its reader must guess which prior analysis, decision, or claim it refers to;
 - rely on database chronology, search, unexplained acronyms, or conversation memory as a substitute for explicit record lineage;
-- leave Purpose or upstream Reference post fields empty on an analysis-bearing entry when a governing prior record exists.
+- leave Purpose or upstream Reference post fields empty on an analysis-bearing entry when a governing prior record exists;
+- replace scientifically informative concrete examples with vague generalities merely for stylistic smoothness or compression.
 
 The goal is narrower and operational:
 
