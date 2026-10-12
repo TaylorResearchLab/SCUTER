@@ -297,7 +297,41 @@ Every handoff must include unresolved or recently dispositioned negative/limitin
 
 A new session must not inherit only the positive or accepted narrative while adverse findings remain elsewhere in the project record.
 
-### 6.4 Project overview / accepted state
+### 6.4 Bilateral runtime-file inventory at handoff
+
+**EACH PARTICIPATING AGENT MUST INVENTORY ITS OWN PROJECT-RELEVANT RUNTIME FILES DURING HANDOFF AND VERIFY DURABLE CUSTODY BEFORE HANDOFF COMPLETION.**
+
+Agent runtimes and chat-generated files are not assumed to persist. Agent 1 cannot certify Agent 2's local runtime, and Agent 2 cannot certify Agent 1's. Each participant therefore performs and reports its own inventory.
+
+At every substantive handoff, each agent must inventory every project-relevant file it created, emitted, downloaded, modified, generated, or stored locally during the work unit. This includes, as applicable, scripts, notebooks, analytical review documents, data extracts, intermediate results needed for reproduction, numerical outputs, figures, tables, archives, manifests, query files, generated manuscript/document revisions, reviewer packets, reproduction packages, files emitted in chat, and authoritative user-supplied inputs whose exact local version is part of the provenance chain.
+
+System caches and non-project temporary files are excluded unless they affect reproducibility.
+
+For every inventoried file, record:
+- local or emitted filename/path;
+- project/scientific role;
+- whether it is authoritative, reproducibility-relevant, intermediate, or derivative;
+- durable destination such as GitHub path/commit, Notion page/attachment, or another User-approved store;
+- immutable identity where practical, such as repository commit/blob identity or SHA-256;
+- backup/access status;
+- whether the intended next agent/reviewer can retrieve it when required; and
+- User disposition if the file is intentionally not preserved.
+
+Allowed custody states are:
+- `BACKED UP / VERIFIED`;
+- `DUPLICATE OF PINNED ARTIFACT`;
+- `USER-WAIVED`;
+- `LOCAL ONLY / UNRESOLVED`.
+
+`LOCAL ONLY / UNRESOLVED` blocks handoff completion until the file is durably preserved or the User explicitly waives preservation.
+
+A statement that a file was backed up is insufficient by itself. The agent verifies the durable destination when available tools permit it, or records the access limitation explicitly. A local runtime path, intended future upload, filename, or checksum without a retrievable durable artifact does not establish custody.
+
+The handoff response itself must contain the runtime-file inventory or a direct durable link to it so the User and receiving agent can see whether anything remains local-only.
+
+Each agent signs/certifies only its own inventory by session identity. The receiving agent may review the inventory but does not retroactively certify files it could not observe in the originating runtime.
+
+### 6.5 Project overview / accepted state
 
 If an unresolved negative or limiting finding affects accepted project state, the Project Overview or equivalent current-state record must link to it until the User resolves or explicitly accepts it.
 
@@ -517,6 +551,12 @@ A participant also fails if it marks such a finding immaterial or dismissed with
 - [ ] Define an orphan-analysis-post failure state and prevent logging/review completion when the governing prior record cannot be traced.
 - [ ] Add structured analysis-record fields or templates for Purpose, Work Unit/Claim ID, Upstream Reference Post(s), Relationship, Governing Artifacts, Result, Negative/Unresolved Findings, Impact, Review/Acceptance State, and Next Action.
 - [ ] Add behavioral tests in which an otherwise correct analysis post lacks upstream provenance or impact context and must fail the FAIR/self-location gate.
+- [ ] Add mandatory per-agent runtime-file inventory to every substantive handoff.
+- [ ] Require each inventoried project file to have one custody state: BACKED UP / VERIFIED, DUPLICATE OF PINNED ARTIFACT, USER-WAIVED, or LOCAL ONLY / UNRESOLVED.
+- [ ] Block handoff completion while any project-relevant file remains LOCAL ONLY / UNRESOLVED.
+- [ ] Require explicit User waiver before an agent treats a project-relevant runtime file as disposable.
+- [ ] Require handoff-chat visibility of the inventory and session identity for the agent certifying it.
+- [ ] Add a behavioral handoff test with preserved, duplicate, local-only, and User-waived files.
 
 ### C. Application testing
 
@@ -597,6 +637,9 @@ The 0.3.0 line is not ready for stable release until all of the following are tr
 26. Every analysis-bearing post states its impact on project state so a reader does not have to infer meaning from local labels, numbers, or chronology.
 27. Analysis posts are understandable when opened directly: a later authorized investigator or agent can trace backward through reference posts to the originating question/decision and forward through later references without reconstructing chat history.
 28. Orphan analysis posts fail the durable-record gate even when the underlying analysis itself is scientifically correct.
+29. Each agent independently inventories its own project-relevant runtime/chat-emitted files during handoff and records a durable custody state for every item.
+30. No substantive handoff is complete while a project-relevant file remains LOCAL ONLY / UNRESOLVED unless the User explicitly waives preservation.
+31. Claimed backups are verified against a durable retrievable destination when available tools permit it, and the handoff inventory is visible in the chat or directly linked from it.
 
 ## 12. Non-goals
 
@@ -618,8 +661,11 @@ SCUTER 0.3.0 should **not**:
 - treat an analysis post as complete when its reader must guess which prior analysis, decision, or claim it refers to;
 - rely on database chronology, search, unexplained acronyms, or conversation memory as a substitute for explicit record lineage;
 - leave Purpose or upstream Reference post fields empty on an analysis-bearing entry when a governing prior record exists;
-- replace scientifically informative concrete examples with vague generalities merely for stylistic smoothness or compression.
+- replace scientifically informative concrete examples with vague generalities merely for stylistic smoothness or compression;
+- assume files emitted in chat or stored in an agent runtime will persist without explicit durable custody;
+- let one agent certify another agent's local runtime inventory;
+- complete a handoff while project-relevant files remain local-only without explicit User disposition.
 
 The goal is narrower and operational:
 
-**No negative or limiting scientific result disappears because an AI participant preferred a cleaner success narrative. Every such result is surfaced, logged, and left for deliberate investigator disposition. No scientific assertion is trusted because an AI participant says it is true: every accepted assertion and equation must carry validated provenance or a reconstructable derivation line. No computational, quantitative, or analytical result is trusted merely because an agent says it reproduced it: the accessible source, reproducible procedure, expected output, and independent review outcome must be preserved. No analysis record is complete if it cannot locate itself in the scientific lineage: every analysis post must identify what it is doing, what prior state governs it, and what its result changes.**
+**No negative or limiting scientific result disappears because an AI participant preferred a cleaner success narrative. Every such result is surfaced, logged, and left for deliberate investigator disposition. No scientific assertion is trusted because an AI participant says it is true: every accepted assertion and equation must carry validated provenance or a reconstructable derivation line. No computational, quantitative, or analytical result is trusted merely because an agent says it reproduced it: the accessible source, reproducible procedure, expected output, and independent review outcome must be preserved. No analysis record is complete if it cannot locate itself in the scientific lineage: every analysis post must identify what it is doing, what prior state governs it, and what its result changes. No handoff is complete until each agent has accounted for its own project-relevant runtime files and verified durable custody or explicit User waiver.**
