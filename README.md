@@ -13,7 +13,7 @@ SCUTER helps scientists work with multiple AI assistants while directing the res
 In the simplest case:
 
 1. **Download the actual `.skill` file to your computer:** [download `scuter-v0.2.2-dev.skill`](https://raw.githubusercontent.com/TaylorResearchLab/SCUTER/fd46637693490f7a54c712397a2677e43b49a3b4/dist/scuter-v0.2.2-dev.skill).
-2. **Do not unzip or edit it.** If your AI application accepts `.skill` files as chat attachments, simply upload or drag that exact `.skill` file into the chat. The assistant can then recognize and use the Skill. If the application instead provides a dedicated **Add Skill**, **Install Skill**, **Upload Skill**, or equivalent control, use that interface to upload the same file.
+2. If your AI application accepts `.skill` files as chat attachments, simply upload or drag that exact `.skill` file into the chat. The assistant can then recognize and use the Skill. If the application instead provides a dedicated **Add Skill**, **Install Skill**, **Upload Skill**, or equivalent control, use that interface to upload the same file.
 3. Tell the assistant: **"Use SCUTER for this project. I am the User."**
 4. Give it your project locations, first bounded task, and acceptance criteria.
 
